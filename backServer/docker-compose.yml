@@ -1,0 +1,26 @@
+version: "3.7"
+
+services:
+
+  flask_app:
+    build: ./flask
+    container_name: flask_app
+    restart: always
+    environment:
+      - APP_NAME=FlaskApp
+    expose:
+      - 5000
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    restart: always
+    ## match the host 8080 into 80 in container of nginx
+    ports:
+      - "8080:80"
+    expose:
+      - 8080
+    volumes:
+      - ./flask/flaskApp/:/data
+
+
