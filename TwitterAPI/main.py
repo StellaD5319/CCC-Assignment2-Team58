@@ -93,5 +93,5 @@ if __name__ == '__main__':
     #r = search_tweet_by_keyWords("Melbourne", 1)
     #print(r, type(r))
 
-    D = api.user_timeline(user_id = "2199299744", count = 5, exclude_replies = True)
+    D = api.user_timeline(user_id = "2199299744", count = 1, exclude_replies = True)
     print(D, type(D))
