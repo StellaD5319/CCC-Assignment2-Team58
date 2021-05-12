@@ -64,7 +64,9 @@ def save_to_DB(input_data, fileName, server, output):
         server[output].save(i)
     print("save data into CouchDB.")
 
-
+def search_twitter_by_user(userid, n):
+    user_tweet = api.user_timeline(user_id="2199299744", count=1, exclude_replies=True)
+    return user_tweet
 
 
 # Press the green button in the gutter to run the script.
