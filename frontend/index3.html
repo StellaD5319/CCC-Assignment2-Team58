@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script src="js/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="top">
+			
+			<div class="top_le">
+				<select name="">
+					<option value=""> Choose The Senario</option>
+					<option value=""> Melbourne</option>
+					<option value=""> Sydney</option>
+					<option value=""> Brisban</option>
+				</select>
+				<select>
+					<option value="0" selected="">Choose The Senario</option>
+					<option value="1">Melbourne</option>
+					<option value="2">Sydney</option>
+					<option value="3">Brisban</option>
+				</select>
+			</div>
+			<div class="top_ri">
+				<ul>
+					<li><a href="index.html">Home Page</a></li>
+					<li><a href="index2.html">Chart Data</a></li>
+				</ul>
+			</div>
+
+				
+
+		</div>
+		
+		<div class="m-WeChat"  id="container" tabindex="0"></div>
+		<script type="text/javascript">   
+			    $(".m-WeChat").css("height",$(window).height());
+			   
+			</script>
+		
+		 <script src="https://webapi.amap.com/maps?v=1.4.2&key=608d75903d29ad471362f8c58c550daf"></script>
+    <script type="text/javascript">
+        var map = new AMap.Map('container', {
+           resizeEnable: true,
+           center:[117.000923 , 36.675807],
+           zoom:11
+        });
+        AMap.plugin('AMap.ToolBar',function(){
+           var toolbar = new AMap.ToolBar();
+           map.addControl(toolbar)
+        })
+    </script>
+    <script type="text/javascript" src="https://webapi.amap.com/demos/js/liteToolbar.js"></script>
+		
+	</body>
+</html>
