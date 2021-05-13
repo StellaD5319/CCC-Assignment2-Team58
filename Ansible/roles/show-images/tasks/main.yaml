@@ -1,0 +1,25 @@
+---
+# tasks file for show-images
+# Show all available Openstack images
+- name: Retrieve all available Openstack images
+  #os_image_facts: 
+  #os_image_info: 
+  openstack.cloud.image_info:
+    auth:
+      auth_url: https://keystone.rc.nectar.org.au:5000/v3/
+      username: Default
+      password: ODA2NzJjNGE5Nzg4ZWQz
+      project_name: unimelb-comp90024-2021-grp-58
+  #openstack.cloud.image_info:
+  register: image_result
+
+- name: Get image names and Ids
+  set_fact:
+    image_facts: "{{ image_facts|default([]) + [ {'name': item.name, 'id': item.id} ] }}"
+  loop: '{{ image_result.openstack_image }}'
+  when: item.name is defined
+
+- name: Show images 
+  debug:
+    msg: "Image name: {{ item.name }}; Image id: {{ item.id }}"
+  loop: '{{ image_facts }}'
