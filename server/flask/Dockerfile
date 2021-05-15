@@ -5,6 +5,9 @@ ENV STATIC_URL /static
 ENV STATIC_PATH /app/static
 ENV STATIC_INDEX 0
 
+ENV HTTP_PROXY=http://wwwproxy.unimelb.edu.au:8000/
+ENV HTTPS_PROXY=http://wwwproxy.unimelb.edu.au:8000/
+
 COPY flaskApp /app
 COPY requirements.txt /app
 COPY . /app
