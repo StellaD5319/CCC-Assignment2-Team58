@@ -15,3 +15,10 @@ Put the front file into `/data` in docker container.
 
 Moving the front file into server directory.
 
+---
+Notes: 
+
+ansible: need to config the proxy when establishing the instance.
+
+You can follow the config\_bash.sh file, need to change the `/etc/environment` and if `docker` need also to used, it also should change the `/etc/systemd/system/docker.service.d/http-proxy.conf`.
+
