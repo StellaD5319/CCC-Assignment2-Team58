@@ -9,4 +9,4 @@ ENV FLASK_APP2=172.26.131.72
 ENV FLASK_APP2=172.26.131.73
 
 # Replace with our own nginx.conf
-COPY nginx.conf /etc/nginx/conf.d/
+COPY nginx.conf /etc/nginx/

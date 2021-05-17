@@ -16,6 +16,10 @@ It should put the front information into /dist directory in docker (nginx).
 
 Port: 8080 : 80. Expose: 8080.
 
+Changes: 
+
+Modify the nginx.conf from `normal loop` to `events`, it speeds up processing, and the response time of web.
+
 ---
 `Scenario:` 
 
