@@ -75,13 +75,12 @@ def get_twitters_stream(location, db_server, db_name):
 
 if __name__ == '__main__':
     token_idx = '0'
-    db_name = 'tweet_mixed'
+    db_name = 'au_tweets'
     geo_only = False
     db_ip = os.getenv("COUCH_DB_IP")
     client = dbOperations(db_ip=db_ip, db_port=5984,
-                          db_username="ccc58", db_passwd="ccc58", databases=["tweet_mixed"])
+                          db_username="ccc58", db_passwd="ccc58", databases=[db_name])
     if len(sys.argv) == 2:
-
         city = sys.argv[1]
         location = _get_coordinates_base_city(city)
         print("Harvest streaming tweets from {} ...".format(city))

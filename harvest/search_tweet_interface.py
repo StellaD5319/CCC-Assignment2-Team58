@@ -97,6 +97,12 @@ def get_opts():
     parser.add_argument('--token_id', type=str,
                         default='0',
                         help='use one token. total 5 tokens')
+    parser.add_argument('--start_time', type=str,
+                        default=None,
+                        help="the start time we setting, current + start_time - duration")
+    parser.add_argument("--end_time", type=str,
+                        default=None,
+                        help="the end time we setting, current - end_time")
 
     return parser.parse_args()
 
@@ -112,12 +118,27 @@ if __name__ == "__main__":
     case3:  python search_tweet_interface.py city_name
     """
 
-    #db_ip = os.getenv("COUCH_DB_IP")
-    db_ip = "172.26.129.170"
+    db_ip = os.getenv("COUCH_DB_IP")
+    try:
+        container_num = os.getenv("SEARCH_CONTAINER_NUM")
+    except:
+        pass
+    #db_ip = "172.26.129.170"
     dbname = "au_tweets"
     hparams = get_opts()
-    start = datetime.date.today() - datetime.timedelta(days=int(hparams.duration))
-    end = datetime.date.today()
+    if hparams.start_time is not None and hparams.end_time is not None:
+        # current time 2021-05-11, if start_time is 2, 
+        # start become 2021-05-11 - 7 + 2 --> 2021-05-06.
+        # end become 2021-05-11. 
+        # period : 2021-05-06 -> 2021-05-11
+        # if end_time is 4:
+        # 2021-05-11 - 4 = 2021-05-07.
+        # period is : 2021-05-06 -> 2021-05-07.
+        start = datetime.date.today() - datetime.timedelta(days=int(hparams.duration)+int(hparams.start_time))
+        end   = datetime.date.today() - datetime.timedelta(days=int(hparams.end_time))
+    else:
+        start = datetime.date.today() - datetime.timedelta(days=int(hparams.duration))
+        end = datetime.date.today()
     # connect the databases
     client = dbOperations(db_ip=db_ip, db_port=5984, db_username="ccc58", db_passwd="ccc58", databases=[dbname])
 
