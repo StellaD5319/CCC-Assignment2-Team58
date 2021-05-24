@@ -2,7 +2,8 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title></title>
+		<title>Chart Page</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		
 		<link rel="stylesheet" type="text/css" href="https://www.jq22.com/jquery/font-awesome.4.6.0.css">
@@ -13,13 +14,106 @@
 		
 		
 		<script src="js/jquery-1.10.2.js"></script>
+		
+		<style type="text/css">
+			body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td { padding:0; margin:0;}
+			table { border-collapse: collapse; border-spacing: 0; }
+			fieldset, img { border: 0; }
+			a { color:#5c5c5c; text-decoration:none; }
+			a:hover { color: #d20c58; }
+			img{margin-top: 5px;
+				margin-left: 30px;
+				inmax-width: 100%;}
+			address, caption, cite, code, dfn, em, th, var { font-weight: normal; font-style: normal; }
+			ol, ul { list-style: none; }
+			h1, h2, h3, h4, h5, h6 { font-weight: normal; font-size: 100%; }
+			q:before, q:after { content:""; }
+
+			/* css base */
+			body { font-family:"微软雅黑"; font-size:12px; color:#707070; line-height:1.8;background: #f6f6fc;}
+
+			.left{ float:left;}
+			.right{ float:right;}
+			.clear:after { content:"."; display:block; height:0; clear:both; visibility:hidden;}
+			.clearfix:after{  content: "."; display: block;height: 0;clear: both; visibility: hidden;}
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.wrap{
+				width: 1200px;
+				margin: 0 auto;
+				overflow: hidden;
+				background: #fff;
+			}
+			.header{
+				border: 1px solid #dadada;
+				background: #FFFFFF;
+			}
+			.center{
+				margin: 40px 0;
+			}
+			.c_le{
+				height: 770px;
+				width: 155px;
+				background: url(left2.jpg);
+				float: left;
+
+				text-align: center;
+				padding-top: 200px;
+				box-sizing: border-box;
+			}
+			#my_date_set1{
+				display: none;
+			}
+			.c_le ul li{
+				background: url(v1.jpg) no-repeat 6px center;
+				margin-bottom: 50px;
+			}
+			.c_le ul li:nth-child(2){
+				background: url(v2.jpg) no-repeat 6px center;
+			}
+			.c_le ul li:nth-child(3){
+				background: url(v3.jpg) no-repeat 6px center;
+			}
+			.c_le ul li a{
+				color: #fff;
+				font-size: 14px;
+			}
+			.bo_ri{
+				width: 80%;
+				height: 500px;
+				float: right;
+				box-sizing: border-box;
+			}
+			.title{
+				text-align: center;
+				margin-bottom: 30px;
+			}
+			.title ul li{
+				display: inline-block;
+				width: 180px;
+				height: 28px;
+				line-height: 28px;
+				border: 1px solid #dbdbdc;
+				margin: 0 25px;
+			}
+			.title ul li a{
+				display: block;
+			}
+			.title ul li.act{
+				background: #c8c8c8;
+			}
+			.title ul li.act a{
+				color: #FFFFFF;
+			}
+
+		</style>
 	</head>
 	<body>
 		<div class="wrap">
 			<div class="header">
-
 					<img src="img/1.jpg" width="180"/>
-
 			</div>
 			
 			<div class="center">
@@ -73,16 +167,11 @@
 						    	 	  	 	$(".title ul li").eq(index).addClass("act").siblings().removeClass("act");
 						    	 	  	 })
 						    	</script>
-								
-								
-								
-								
 							</div>
 							</div>
 					    </div>
 					</div>
-					
-					
+
 				</div>
 			</div>
 		</div>
@@ -158,7 +247,7 @@
 				        
 				    },
 				    title: {
-				        text: '会员数量：1000',
+				        text: '用户数量：1000',
 				        /*subtext: '昨日新增：',
 				        subtextStyle: {
 							fontSize:14,
@@ -235,7 +324,7 @@
 				        	//console.log(data)
 							 myChart.setOption({
 						        title : {
-							        text: '会员数量' + data.value,
+							        text: '用户数量' + data.value,
 							    }
 						    });
 							return data.name + '</br>' + '人数：' + data.value + '</br>占比：' + data.percent + '%'+'</br>';
