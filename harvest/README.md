@@ -6,9 +6,9 @@ couchDB instance:
 
 Run two search containers.
 
-`sudo docker build search_1 -f Dockerfile .`
+`sudo docker build -t search_1 -f Dockerfile .`
 
-`sudo docker build search_2 -f Dockerfile_2 .`
+`sudo docker build -t search_2 -f Dockerfile_2 .`
 
 `sudo docker run search_1`
 
@@ -19,9 +19,9 @@ web instance:
 
 Run two stream containers.
 
-`sudo docker build stream_sy -f Dockerfile_stream_sy .`
+`sudo docker build -t stream_sy -f Dockerfile_stream_sy .`
 
-`sudo docker build stream_pe -f Dockerfile_stream_pe .`
+`sudo docker build -t stream_pe -f Dockerfile_stream_pe .`
 
 `sudo docker run stream_sy`
 
@@ -32,11 +32,11 @@ another instance:
 
 Run three stream containers.
 
-`sudo docker build stream_ml -f Dockerfile_stream_ml .`
+`sudo docker build -t stream_ml -f Dockerfile_stream_ml .`
 
-`sudo docker build stream_br -f Dockerfile_stream_br .`
+`sudo docker build -t stream_br -f Dockerfile_stream_br .`
 
-`sudo docker build stream_ad -f Dockerfile_stream_ad .`
+`sudo docker build -t stream_ad -f Dockerfile_stream_ad .`
 
 `sudo docker run stream_ml`
 
