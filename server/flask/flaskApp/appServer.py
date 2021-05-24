@@ -1,9 +1,9 @@
 from . import app
 from flask import request, url_for, jsonify, make_response, abort
 import os
-import sys 
-sys.path.append("../../")
+
 from data_analysis import city_sentiment_analysis, city_covid_analysis
+
 db_name = "whole_au"
 
 @app.route("/api/?city=sentiments", methods=['Get', 'POST'])
