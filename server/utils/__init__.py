@@ -1,5 +1,6 @@
 ## It will put the operations to CouchDB.
 import couchdb, os
+import logging
 
 db_ip = os.getenv("COUCH_DB_IP")
 db_port = os.getenv("COUCH_DB_PORT")
@@ -42,8 +43,22 @@ class dbOperations(object):
             except:
                 print("[*] WARNING: the {} already existed.".format(name))
     
-    def _create_view(self, **kwargs):
-        pass
+    def _create_view(self, db_name, design_doc_name, view_name, map_function, **kwargs):
+        data = {
+        "_id": f"_design/{design_doc_name}",
+        "views": {
+            view_name: {
+                "map": map_function
+                }
+        },
+        "language": "javascript",
+        "options": {"partitioned": False }
+        }
+        logging.info(f"creating view {design_doc_name}/{view_name}" )
+        self.server[db_name].save(data)
+    
+    def _get_view_data(self, db_name, view_syntax, **kwargs):
+        return self.server[db_name].view(view_syntax)
 
     def save_views_into_tables(self, db_name, json_data):
         ## input key is table name, value is json_data; 
@@ -61,6 +76,3 @@ class dbOperations(object):
         for name in self.databases:
             self.server.delete(name)
         #self.server.close()
-
-
-

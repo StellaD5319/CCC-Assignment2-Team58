@@ -1,23 +1,19 @@
 from . import app
 from flask import request, url_for, jsonify, make_response, abort
 import os
+import sys 
+sys.path.append("../../")
+from data_analysis import city_sentiment_analysis, city_covid_analysis
+db_name = "whole_au"
 
-@app.route("/api/v2.0/")
-def index():
+@app.route("/api/?city=sentiments", methods=['Get', 'POST'])
+def return_sentiments_result():
+    return city_sentiment_analysis._sentiment_result(db_name)
 
-    # Use os.getenv("key") to get environment variables
-    #app_name = os.getenv("APP_NAME")
-    app_name = "SCVR"
+@app.route('/api/?city=covidrates', methods=['GET', 'POST'])
+def return_covid_rates():
+    return city_covid_analysis._covid_rate_result(db_name)
 
-    if app_name:
-        return f"Hello from {app_name} running in a Docker container behind Nginx!"
-
-    return "Hello from Flask"
-
-@app.route('/api/')
-def index_t():
-    return "</p>Server RSETFUL API</p>"
-
-@app.route('/app/edit_profile', methods=['GET', 'POST'])
-def edit_profile():
+@app.route('/api/?suburb=lang', methods=['GET', 'POST'])
+def return_suburb_lang_rate():
     return "GET --------- OPERATIONS"
