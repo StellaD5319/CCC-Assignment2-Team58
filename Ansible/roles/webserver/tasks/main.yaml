@@ -1,5 +1,0 @@
-     - include: user.yml
-     - include: insatll.yml
-     - include: config.yml
-     - include: file.yml
-     - include: service.yml
