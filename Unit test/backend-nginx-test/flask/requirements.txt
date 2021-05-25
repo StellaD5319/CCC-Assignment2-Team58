@@ -1,0 +1,6 @@
+click==7.1.2
+CouchDB==1.2
+Flask==1.1.2
+Jinja2==2.11.2
+MarkupSafe==1.1.1
+uwsgi==2.0.18

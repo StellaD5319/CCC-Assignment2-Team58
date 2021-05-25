@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+		<script src="js/jquery.min.js"></script>
+		<title>Map Visualization</title>
+<!--		<script src="index.js"></script>-->
+		<meta charset="utf-8">
+		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<style type="text/css">
+		  /* Always set the map height explicitly to define the size of the div
+		   * element that contains the map. */
+		  #map {
+			  height:100%;
+		  }
+		  /* Optional:Makes the sample page fill the window. */
+		  html,body {
+			  height:100%;
+			  margin:0;
+			  padding:0;
+		  }
+		  body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+			  padding:0;
+			  margin:0;
+		  }
+		  table {
+			  border-collapse:collapse;
+			  border-spacing:0;
+		  }
+		  fieldset,img {
+			  border:0;
+		  }
+		  a {
+			  color:#5c5c5c;
+			  text-decoration:none;
+		  }
+		  a:hover {
+			  color:#d20c58;
+		  }
+		  img {
+			  margin-top:5px;
+			  margin-left:30px;
+			  inmax-width:100%;
+		  }
+		  address,caption,cite,code,dfn,em,th,var {
+			  font-weight:normal;
+			  font-style:normal;
+		  }
+		  ol,ul {
+			  list-style:none;
+		  }
+		  h1,h2,h3,h4,h5,h6 {
+			  font-weight:normal;
+			  font-size:100%;
+		  }
+		  q:before,q:after {
+			  content:"";
+		  }
+		  /* css base */
+		  body {
+			  font-family:"微软雅黑";
+			  font-size:12px;
+			  color:#707070;
+			  line-height:1.8;
+			  background:#f6f6fc;
+		  }
+		  .left {
+			  float:left;
+		  }
+		  .right {
+			  float:right;
+		  }
+		  .clear:after {
+			  content:".";
+			  display:block;
+			  height:0;
+			  clear:both;
+			  visibility:hidden;
+		  }
+		  .clearfix:after {
+			  content:".";
+			  display:block;
+			  height:0;
+			  clear:both;
+			  visibility:hidden;
+		  }
+		  * {
+			  margin:0;
+			  padding:0;
+		  }
+		  .top_le {
+			  float:left;
+			  margin-top:40px;
+		  }
+		  .top_le select {
+			  display:block;
+			  height:30px;
+			  margin-left:100px;
+			  margin-bottom:10px;
+			  background:#FFFFFF;
+		  }
+		  .top {
+			  position:absolute;
+			  top:0px;
+			  width:100%;
+			  z-index:200000;
+		  }
+		  .top_ri {
+			  float:right;
+			  margin-right:40px;
+			  margin-top:40px;
+		  }
+		  .top_ri ul li {
+			  display:block;
+			  padding:3px 30px;
+			  background-color:rgb(243,224,36);
+			  margin-bottom:10px;
+			  border-radius:10px;
+			  font-size:14px;
+		  }
+		</style>
+		<!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBg0TmqC0P89IPSpPlrsoW-I6Xk8IrlGQ"></script>
+		<script>
+		  $(document).ready(function(){
+			  let map = new google.maps.Map(document.getElementById("map"), {
+				  zoom: 4.8,
+				  center:  {lat: -28, lng: 130},
+				  disableDefaultUI: true,
+				  styles: [{elementType: "labels.icon", stylers: [{visibility: "off"}]}]
+			  });
+			  const theme = '#0089ff'
+			  $('#citySelect').change(function () {
+				  const val = $(this).val()
+				  switch (val) {
+				  	case 'Melbourne':
+						map = new google.maps.Map(document.getElementById('map'), {
+							zoom: 9,
+							center: {lat: -37.7998, lng: 144.90},
+							disableDefaultUI: true,
+							styles: [{elementType: "labels.icon", stylers: [{visibility: "off"}]}]
+						});
+						mapAurin(val);
+						break
+				  case 'Sydney':
+					  map = new google.maps.Map(document.getElementById('map'), {
+						  zoom: 9,
+						  center: {lat: -33.92, lng: 151.1},
+						  disableDefaultUI: true,
+						  styles: [{elementType: "labels.icon", stylers: [{visibility: "off"}]}]
+					  });
+					  mapAurin(val);
+					  break
+				  case 'Brisban':
+					  map = new google.maps.Map(document.getElementById('map'), {
+						  zoom: 9,
+						  center: {lat: -27.39, lng: 153},
+						  disableDefaultUI: true,
+						  styles: [{elementType: "labels.icon", stylers: [{visibility: "off"}]}]
+					  });
+					  mapAurin(val);
+					  break
+				  case 'Perth':
+					  map = new google.maps.Map(document.getElementById('map'), {
+						  zoom: 9,
+						  center: {lat: -31.95, lng: 115.72},
+						  disableDefaultUI: true,
+						  styles: [{elementType: "labels.icon", stylers: [{visibility: "off"}]}]
+					  });
+					  mapAurin(val);
+					  break
+				  case 'Adelaide':
+					  map = new google.maps.Map(document.getElementById('map'), {
+						  zoom: 9,
+						  center: {lat: -34.9, lng: 138.330},
+						  disableDefaultUI: true,
+						  styles: [{elementType: "labels.icon", stylers: [{visibility: "off"}]}]
+					  });
+					  mapAurin(val);
+					  break
+				  }
+			  })
+			  function rgbToHex(r, g, b) {
+				  const hex = ((r<<16) | (g<<8) | b).toString(16);
+				  return "#" + new Array(Math.abs(hex.length-7)).join("0") + hex;
+			  }
+			  function hexToRgb(hex) {
+				  const rgb = [];
+				  for(let i=1; i<7; i+=2){
+					  rgb.push(parseInt("0x" + hex.slice(i,i+2)));
+				  }
+				  return rgb;
+			  }
+			  function gradient (startColor, endColor, step) {
+				  const sColor = hexToRgb(startColor)
+				  const eColor = hexToRgb(endColor)
+
+				  const rStep = (eColor[0] - sColor[0]) / step
+				  const gStep = (eColor[1] - sColor[1]) / step
+				  const bStep = (eColor[2] - sColor[2]) / step
+
+				  const gradientColorArr = [];
+				  for(let i=0; i < step; i++){
+					  gradientColorArr.push(rgbToHex(parseInt(rStep*i+sColor[0]),parseInt(gStep*i+sColor[1]),parseInt(bStep*i+sColor[2])));
+				  }
+				  return gradientColorArr;
+			  }
+			  function mapAurin(val) {
+				  let colors;
+				  if (val === 'Melbourne') {
+					  map.data.loadGeoJson('./melbourne.json');
+				  }
+				  if (val === 'Sydney') {
+					  map.data.loadGeoJson('./sydney.json');
+				  }
+				  if (val === 'Brisban') {
+					  map.data.loadGeoJson('./brisban.json');
+				  }
+				  if (val === 'Perth') {
+					  map.data.loadGeoJson('./perth.json');
+				  }
+				  if (val === 'Adelaide') {
+					  map.data.loadGeoJson('./adelaide.json');
+				  }
+				  let basic = '#F1F0E9';
+				  map.data.setStyle((feature) => {
+					  let income = feature.getProperty('Income');
+					  let name = feature.getProperty('sa4_name');
+					  let color = basic;
+					  colors = gradient(basic, theme, 7);
+					  if(!income) income = 0;
+					  console.log(income)
+					  if (income < 40000)
+						  color = colors[0]
+					  if (income > 42000)
+						  color = colors[1]
+					  if (income > 44000)
+						  color = colors[2]
+					  if (income > 46000)
+						  color = colors[3]
+					  if (income > 48000)
+						  color = colors[4]
+					  if (income > 50000)
+						  color = colors[5]
+					  if (income > 52000)
+						  color = colors[6]
+					  return {
+						  fillColor: color,
+						  fillOpacity: 1,
+						  strokeWeight: 1
+					  }
+				  });
+			  }
+		  });
+		</script>
+	</head>
+	<body>
+		<div id="map"></div>
+		<div class="top">
+			<div class="top_le">
+				<select id="citySelect">
+					<option value="">Choose The City</option>
+					<option value="Melbourne">Melbourne</option>
+					<option value="Sydney">Sydney</option>
+					<option value="Brisban">Brisban</option>
+					<option value="Perth">Perth</option>
+					<option value="Adelaide">Adelaide</option>
+				</select>
+			</div>
+			<div class="top_ri">
+				<ul>
+					<li><a href="index.html">Home Page</a></li>
+					<li><a href="index2.html">Statistic</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

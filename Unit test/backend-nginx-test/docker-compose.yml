@@ -1,5 +1,9 @@
 version: "3.7"
 
+# Test the connection between nginx and flask with uwsig. 
+# Test the front request can post to flask,
+# and flask can send the response back.
+
 services:  
   flask_app:
     build: ./flask
