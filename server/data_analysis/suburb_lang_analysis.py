@@ -142,7 +142,7 @@ def get_score_mapping(filePath= "AFINN.txt"):
 def generate_dict(ll):
     dict = {}
     for i in ll:
-        dict[i] = {"lang":{}, "emotion":0, "covid_rate":0.0}
+        dict[i] = {"lang":{}, "emotion":0, "covid_rate":0.0, "sentiment_avg":0.0}
     return dict
 #----------------------------------------------------------------#
 #    Polygon definitions
@@ -238,6 +238,7 @@ def _covid_rate_result(db_name):
         if dict[key]["total_text"] == 0:
             continue
         WHOLE_DICT[key]["covid_rate"] = dict[key]["covid_positive"] / dict[key]["total_text"]
+        WHOLE_DICT[key]["sentiment_avg"] = WHOLE_DICT[key]["emotion"] / dict[key]["total_text"]
     return WHOLE_DICT
 
 
