@@ -1,27 +1,37 @@
 [
   {
     "City": "Melbourne",
-    "Median Income": 47943,
-    "Rate of Mentioning COVID": 0.005736138
+    "Certificate": 15,
+    "Graduate Degree": 4.7,
+    "Bachelor Degree": 16.6,
+    "Rate of Mentioning COVID": 0.573613767
   },
   {
-    "City": "Brisban",
-    "Median Income": 46907,
-    "Rate of Mentioning COVID": 0.005193906
+    "City": "Brisbane",
+    "Certificate": 18.1,
+    "Graduate Degree": 3.9,
+    "Bachelor Degree": 14.5,
+    "Rate of Mentioning COVID": 0.519390582
   },
   {
     "City": "Adelaide",
-    "Median Income": 51294.25,
-    "Rate of Mentioning COVID": 0.004024685
+    "Certificate": 18.1,
+    "Graduate Degree": 3.3,
+    "Bachelor Degree": 13.2,
+    "Rate of Mentioning COVID": 0.402468473
   },
   {
     "City": "Perth",
-    "Median Income": 53720.5,
-    "Rate of Mentioning COVID": 0.007736231
+    "Certificate": 18.6,
+    "Graduate Degree": 3.4,
+    "Bachelor Degree": 14.5,
+    "Rate of Mentioning COVID": 0.773623135
   },
   {
     "City": "Sydney",
-    "Median Income": 50569.04444,
-    "Rate of Mentioning COVID": 0.007150492
+    "Certificate": 15.2,
+    "Graduate Degree": 5.6,
+    "Bachelor Degree": 16.9,
+    "Rate of Mentioning COVID": 0.715049206
   }
 ]

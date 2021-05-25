@@ -1,0 +1,27 @@
+[
+  {
+    "City": "Sydney",
+    "Average Sentiment": 13714,
+    "Migration": -14177
+  },
+  {
+    "City": "Perth",
+    "Average Sentiment": 4060,
+    "Migration": 2091
+  },
+  {
+    "City": "Brisbane",
+    "Average Sentiment": 4728,
+    "Migration": 1911
+  },
+  {
+    "City": "Melbourne",
+    "Average Sentiment": 12736,
+    "Migration": 4143
+  },
+  {
+    "City": "Adelaide",
+    "Average Sentiment": 3021,
+    "Migration": -3520
+  }
+]
