@@ -600,7 +600,7 @@
       "properties": {
         "sa4_name": "Adelaide - West",
         "Income": 47943,
-        "Emotion": 0.6305220883534136,
+        "Emotion": 0.63,
         "Language": {
           "en": 461,
           "et": 2,
@@ -617,7 +617,7 @@
           "ca": 1,
           "el": 1
         },
-        "covid_rate": 0.002008032128514056
+        "covid_rate": 0.002
       }
     }
   ]
