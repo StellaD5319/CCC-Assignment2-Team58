@@ -91,6 +91,46 @@
 			  margin:0;
 			  padding:0;
 		  }
+		  .top_le {
+			  float:left;
+			  margin-top:40px;
+		  }
+		  .top_le select {
+			  display:block;
+			  height:40px;
+			  width: 180px;
+			  margin-left:100px;
+			  margin-bottom:10px;
+			  background:#FFFFFF;
+			  border-radius:12px;
+			  font-size:18px;
+			  border: 3.5px dashed #F3E024FF;
+			  font-family:"Times New Roman", Times, serif;
+		  }
+		  .top {
+			  position:absolute;
+			  top:0px;
+			  width:100%;
+		  }
+		  .top_ri {
+			  float:right;
+			  margin-right:40px;
+			  margin-top:40px;
+		  }
+		  .top_ri ul li {
+			  display:block;
+			  padding:3px 36px;
+			  background-color:rgb(243,224,36);
+			  margin-bottom:10px;
+			  border-radius:12px;
+			  font-size:18px;
+			  border: 3px dashed white;
+			  font-family:"Times New Roman", Times, serif;
+			  text-align : center
+		  }
+		  .top_ri ul li:hover {
+			  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+		  }
 		</style>
 		<!-- Async script executes immediately and must be after any DOM elements used in callback. -->
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBg0TmqC0P89IPSpPlrsoW-I6Xk8IrlGQ"></script>
@@ -229,7 +269,7 @@
 					  let income = feature.getProperty('Income');
 					  let language = feature.getProperty('Language');
 					  let Emotion = feature.getProperty('Emotion');
-					  const content = `<div id="mapChart" style="width: 400px; height: 550px"></div><div style="text-align: center; font-size: 18px;">情绪值：${Emotion}<br>收入：${income}</div>`
+					  const content = `<div id="mapChart" style="width: 600px; height: 550px"></div><div style="text-align: center; font-size: 18px;">情绪值：${Emotion}<br>收入：${income}</div>`
 					  const data = []
 					  for (let i in language) {
 						  data.push({name: i, value: language[i]})
@@ -257,7 +297,7 @@
 								  {
 									  type: 'pie',
 									  radius: '60%',
-									  center: ["50%", "60%"],
+									  center: ["50%", "50%"],
 									  data: data
 								  }
 							  ]
@@ -278,12 +318,6 @@
 	<body>
 		<div id="map"></div>
 		<div class="top">
-			<div class="top_ri">
-				<ul>
-					<li><a href="index.html">Home Page</a></li>
-					<li><a href="index2.html">Statistic</a></li>
-				</ul>
-			</div>
 			<div class="top_le">
 				<select id="citySelect">
 					<option value="">Choose The City</option>
@@ -293,6 +327,12 @@
 					<option value="Perth">Perth</option>
 					<option value="Adelaide">Adelaide</option>
 				</select>
+			</div>
+			<div class="top_ri">
+				<ul>
+					<li><a href="index.html">Home Page</a></li>
+					<li><a href="index2.html">Statistic</a></li>
+				</ul>
 			</div>
 		</div>
 	</body>
