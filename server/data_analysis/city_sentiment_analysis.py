@@ -109,7 +109,7 @@ def get_score_mapping(filePath= "AFINN.txt"):
 AFINN = {}
 AFINN = get_score_mapping()
 ## connect the CouchDB
-db_name = "au_tweets"
+db_name = "whole"
 db_ip = os.getenv("COUCH_DB_IP", "null")
 if db_ip == "null":
     db_ip = "172.26.129.170"
@@ -179,11 +179,13 @@ def get_data_from_db_views(db_name, city_name): # db_name, design_doc_name, view
 
 def process_data(input):
     sentiment = 0
+    tweets = 0
     for item in get_data_from_db_views(db_name=input[0], city_name=input[1]):
-        if len(item.value[1]) == 0:
+        if len(str(item.value[1])) < 9:
             continue
         sentiment += calculate_sentiment_scores(item.value[1], input[2])
-    return (input[1], sentiment)
+        tweets += 1
+    return (input[1], sentiment, tweets)
 
 def _sentiment_result(db_name, AFINN=AFINN):
     cities = ["Sydney", "Melbourne", "Brisbane", "Perth (WA)", "Adelaide"]
@@ -193,10 +195,14 @@ def _sentiment_result(db_name, AFINN=AFINN):
     sentiments = {}
     result = map(process_data, inputs)
     for res in result:
-        sentiments[res[0]] = res[1]
+        sentiments[res[0]] = [res[1],res[1] / res[2]]
     return sentiments
 
 if __name__ == "__main__":
     cities = ["Sydney", "Melbourne", "Brisbane", "Perth (WA)", "Adelaide"]
     #get_data_from_db_views("sydney", cities[0])
-    print(_sentiment_result("whole_au"))
+    #print(_sentiment_result("whole_au"))
+    import json
+    result = _sentiment_result("whole")
+    with open("city_sentiment.json", "w") as f:
+        json.dump(result, f)
