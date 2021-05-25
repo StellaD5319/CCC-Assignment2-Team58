@@ -19,11 +19,6 @@
     src: nginx.conf.j2
     dest: '/home/ubuntu/COMP90024/server/nginx/nginx.conf'
 
-- name: Modify nginx Dockerfile
-  become: yes
-  template:
-    src: Dockerfile.j2
-    dest: '/home/ubuntu/COMP90024/server/nginx/Dockerfile'
 
 
 - name: Start server
