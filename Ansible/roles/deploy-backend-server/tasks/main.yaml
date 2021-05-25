@@ -1,0 +1,21 @@
+---
+
+- name: Shut down previous server
+  become: yes
+  shell: docker-compose down --rmi local --remove-orphans
+  args:
+    chdir: /home/ubuntu/COMP90024/server-backend
+
+
+- name: upload Flask Dockerfile
+  become: yes
+  copy:
+    src: "../CCC-Assignment2-Team58-main/server-backend" #nginx.conf
+    dest: '{{ remote_working_directory }}'
+
+
+- name: Start server
+  become: yes
+  shell: docker-compose up -d
+  args:
+    chdir: /home/ubuntu/COMP90024/server-backend
