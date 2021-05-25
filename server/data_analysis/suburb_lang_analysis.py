@@ -142,7 +142,7 @@ def get_score_mapping(filePath= "AFINN.txt"):
 def generate_dict(ll):
     dict = {}
     for i in ll:
-        dict[i] = {"lang":{}, "emotion":0}
+        dict[i] = {"lang":{}, "emotion":0, "covid_rate":0.0}
     return dict
 #----------------------------------------------------------------#
 #    Polygon definitions
@@ -214,7 +214,16 @@ def find_belong_to_sub(coordinate):
         result[np.sum((np.array(WHOLE_DATA[key]) - np.array(coordinate))**2)] = key
     return result[min(list(result.keys()))]
 
+def get_covid_from_text(text):
+    if "covid" in text.lower():
+        return 1
+    return 0
+
 def _covid_rate_result(db_name):
+    dict = {}
+    for i in WHOLE_LIST:
+        dict[i] = {"covid_positive":0, "total_text":0}
+
     for item in get_data_from_db_views(db_name):
         coordinate, text, lang = item.key, item.value[1], item.value[2]
         key = find_belong_to_sub(coordinate[::-1])
@@ -223,6 +232,12 @@ def _covid_rate_result(db_name):
         else:
             WHOLE_DICT[key]["lang"][lang] += 1
         WHOLE_DICT[key]["emotion"] += calculate_sentiment_scores(text, AFINN)
+        dict[key]["total_text"] += 1
+        dict[key]["covid_positive"] += get_covid_from_text(text)
+    for key in dict.keys():
+        if dict[key]["total_text"] == 0:
+            continue
+        WHOLE_DICT[key]["covid_rate"] = dict[key]["covid_positive"] / dict[key]["total_text"]
     return WHOLE_DICT
 
 
