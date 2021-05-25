@@ -573,7 +573,7 @@
       "properties": {
         "sa4_name": "Central Coast",
         "Income": 43672.5,
-        "Emotion": 125,
+        "Emotion": 0.79,
         "Language": {
           "en": 145,
           "ca": 1,
@@ -1163,7 +1163,7 @@
       "properties": {
         "sa4_name": "Sydney - Baulkham Hills and Hawkesbury",
         "Income": 50529.5,
-        "Emotion": 95,
+        "Emotion": 1.06,
         "Language": {
           "en": 77,
           "nl": 6,
@@ -1243,7 +1243,7 @@
       "properties": {
         "sa4_name": "Sydney - Blacktown",
         "Income": 47584,
-        "Emotion": 31,
+        "Emotion": 0.53,
         "Language": {
           "en": 56,
           "de": 1,
@@ -1398,7 +1398,7 @@
       "properties": {
         "sa4_name": "Sydney - City and Inner South",
         "Income": 52368.67,
-        "Emotion": 608,
+        "Emotion": 0.78,
         "Language": {
           "en": 751,
           "nl": 1,
@@ -1583,7 +1583,7 @@
       "properties": {
         "sa4_name": "Sydney - Eastern Suburbs",
         "Income": 60231,
-        "Emotion": 43,
+        "Emotion": 0.59,
         "Language": {
           "en": 68,
           "tl": 1,
@@ -1851,7 +1851,7 @@
       "properties": {
         "sa4_name": "Sydney - Inner West",
         "Income": 56264,
-        "Emotion": 355,
+        "Emotion": 0.49,
         "Language": {
           "en": 690,
           "fi": 1,
@@ -2116,7 +2116,7 @@
       "properties": {
         "sa4_name": "Sydney - North Sydney and Hornsby",
         "Income": 58834,
-        "Emotion": 28,
+        "Emotion": 1.75,
         "Language": {
           "en": 16
         },
@@ -2421,7 +2421,7 @@
       "properties": {
         "sa4_name": "Sydney - Northern Beaches",
         "Income": 52121,
-        "Emotion": 31,
+        "Emotion": 0.97,
         "Language": {
           "en": 29,
           "ja": 1,
@@ -3208,7 +3208,7 @@
       "properties": {
         "sa4_name": "Sydney - Parramatta",
         "Income": 44011.5,
-        "Emotion": 16,
+        "Emotion": 1.07,
         "Language": {
           "es": 1,
           "en": 14
@@ -3268,7 +3268,7 @@
       "properties": {
         "sa4_name": "Sydney - Ryde",
         "Income": 50958,
-        "Emotion": 11,
+        "Emotion": 0.61,
         "Language": {
           "en": 16,
           "ja": 1,
@@ -3417,7 +3417,7 @@
       "properties": {
         "sa4_name": "Sydney - South West",
         "Income": 47507,
-        "Emotion": -2,
+        "Emotion": -0.22,
         "Language": {
           "en": 8,
           "ro": 1
