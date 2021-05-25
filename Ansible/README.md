@@ -32,7 +32,7 @@ This step deploys the database in a specific instance, the database used in this
 This step deploys the back-end in a specific instance and Flask is required in this instance. It installs Flask, modifies the configuration file and then restarts the server. 
 
 7. Deploy web application
-8. 
+
 ./run_front-end.sh
 
 This step deploys the front-end in the specific instance. Nginx is used for web application interfaces, so it installs Nginx, modifies the configuration file and then restarts the server.
