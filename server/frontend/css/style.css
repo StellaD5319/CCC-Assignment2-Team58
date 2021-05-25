@@ -88,56 +88,34 @@ body { font-family:"微软雅黑"; font-size:12px; color:#707070; line-height:1.
 	-webkit-text-stroke:1.0px#000000;
 }
 .top_le{
-	margin-top: 20px;
+	float: left;
+	margin-top: 40px;
 }
+.top_le select{
+	display: block;
+	height: 30px;
+	margin-left: 100px;
+	margin-bottom: 10px;
+	background: #FFFFFF;
 
-.top_le select {
-	display:block;
-	height:40px;
-	width: 180px;
-	background:#FFFFFF;
-	border-radius:12px;
-	font-size:18px;
-	border: 3.5px dashed #F3E024FF;
-	font-family:"Times New Roman", Times, serif;
-}
-.top_le select {
-	display:block;
-	height:40px;
-	width: 180px;
-	margin-left:100px;
-	margin-bottom:10px;
-	background:#FFFFFF;
-	border-radius:12px;
-	font-size:18px;
-	border: 3.5px dashed #F3E024FF;
-	font-family:"Times New Roman", Times, serif;
 }
 .top{
 	position: absolute;
 	top: 0px;
-	right: 0;
-	display: flex;
-	flex-flow: column;
-	align-items: center;
-	justify-content: center;
-	padding: 30px;
+	width: 100%;
 }
 .top_ri{
+	float: right;
+	margin-right: 40px;
+	margin-top: 40px;
 }
-.top_ri ul li {
-	display:block;
-	padding:3px 36px;
-	background-color:rgb(243,224,36);
-	margin-bottom:10px;
-	border-radius:12px;
-	font-size:18px;
-	border: 3px dashed white;
-	font-family:"Times New Roman", Times, serif;
-	text-align : center
-}
-.top_ri ul li:hover {
-	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+.top_ri ul li{
+	display: block;
+	padding: 3px 30px;
+	background-color: rgb(243, 224, 36);
+	margin-bottom: 10px;
+	border-radius: 10px;
+	font-size: 14px;
 }
 .bo_ri{
 	width: 80%;
