@@ -1,673 +1,507 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title>Chart Page</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-		
-		<link rel="stylesheet" type="text/css" href="https://www.jq22.com/jquery/font-awesome.4.6.0.css">
-		<link rel="stylesheet" href="css/animsition.min.css" />
-		<link rel="stylesheet" href="css/drop-down.css" />
-		<link rel="stylesheet" href="css/common.css" />
-		<link rel="stylesheet" href="css/system.css" />
-		
-		
-		<script src="js/jquery-1.10.2.js"></script>
-		
-		<style type="text/css">
-			body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td { padding:0; margin:0;}
-			table { border-collapse: collapse; border-spacing: 0; }
-			fieldset, img { border: 0; }
-			a { color:#5c5c5c; text-decoration:none; }
-			a:hover { color: #d20c58; }
-			img{margin-top: 5px;
-				margin-left: 30px;
-				inmax-width: 100%;}
-			address, caption, cite, code, dfn, em, th, var { font-weight: normal; font-style: normal; }
-			ol, ul { list-style: none; }
-			h1, h2, h3, h4, h5, h6 { font-weight: normal; font-size: 100%; }
-			q:before, q:after { content:""; }
+<head>
+    <meta charset="utf-8"/>
+    <title>Chart Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
-			/* css base */
-			body { font-family:"微软雅黑"; font-size:12px; color:#707070; line-height:1.8;background: #f6f6fc;}
+    <link rel="stylesheet" type="text/css" href="https://www.jq22.com/jquery/font-awesome.4.6.0.css">
+    <link rel="stylesheet" href="css/drop-down.css"/>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/system.css"/>
 
-			.left{ float:left;}
-			.right{ float:right;}
-			.clear:after { content:"."; display:block; height:0; clear:both; visibility:hidden;}
-			.clearfix:after{  content: "."; display: block;height: 0;clear: both; visibility: hidden;}
-			*{
-				margin: 0;
-				padding: 0;
-			}
-			.wrap{
-				width: 1200px;
-				margin: 0 auto;
-				overflow: hidden;
-				background: #fff;
-			}
-			.header{
-				border: 1px solid #dadada;
-				background: #FFFFFF;
-			}
-			.center{
-				margin: 40px 0;
-			}
-			.c_le{
-				height: 770px;
-				width: 155px;
-				background: url(left2.jpg);
-				float: left;
 
-				text-align: center;
-				padding-top: 200px;
-				box-sizing: border-box;
-			}
-			#my_date_set1{
-				display: none;
-			}
-			.c_le ul li{
-				background: url(v1.jpg) no-repeat 6px center;
-				margin-bottom: 50px;
-			}
-			.c_le ul li:nth-child(2){
-				background: url(v2.jpg) no-repeat 6px center;
-			}
-			.c_le ul li:nth-child(3){
-				background: url(v3.jpg) no-repeat 6px center;
-			}
-			.c_le ul li a{
-				color: #fff;
-				font-size: 14px;
-			}
-			.bo_ri{
-				width: 80%;
-				height: 500px;
-				float: right;
-				box-sizing: border-box;
-			}
-			.title{
-				text-align: center;
-				margin-bottom: 30px;
-			}
-			.title ul li{
-				display: inline-block;
-				width: 180px;
-				height: 28px;
-				line-height: 28px;
-				border: 1px solid #dbdbdc;
-				margin: 0 25px;
-			}
-			.title ul li a{
-				display: block;
-			}
-			.title ul li.act{
-				background: #c8c8c8;
-			}
-			.title ul li.act a{
-				color: #FFFFFF;
-			}
+    <script src="js/jquery-1.10.2.js"></script>
 
-		</style>
-	</head>
-	<body>
-		<div class="wrap">
-			<div class="header">
-					<img src="img/1.jpg" width="180"/>
-			</div>
-			
-			<div class="center">
-				<div class="c_le">
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="index2.html">Chart Data</a></li>
-						<li><a href="index3.html">Map</a></li>
-					</ul>
-					
-					
-					</div>
-				</div>
-				<div class="bo_ri" style="height: 600px;">
-					<div class="title">
-						<ul>
-							<li class="act"><a href="#">场景1</a></li>
-							<li><a href="#">场景2</a></li>
-							<li><a href="#">场景3</a></li>
-						</ul>
-					</div>
-					
-					<div class="bbo">
-						<div class="data_wrap" style="background: #efeff5; width: 100%; padding: 10px; overflow: hidden;box-sizing: border-box;">
-					    <div class="animsition">
-							<div style="background: white; solid #efeff5; width: 100%; overflow: hidden;">
-								<p id="my_date_set1">日期</p>
-					    		<p id="my_date_set2">日期</p>
-					    		<div class="list">
-					    			<ul>
-					    				<li>
-					    					<div id="main" style="height:350px; width: 600px; float: left;" ></div>
-								            <div id="main2" style="height:350px; width: 320px; float: left;"></div>
-					    				</li>
-					    				<li>
-					    					<div id="main3" style="height:350px; width: 940px; clear: both; border-top: 10px solid #efeff5;"></div>
-					    				</li>
-					    				<li>
-					    					<div id="main4" style="height:350px; width: 600px; float: left; border-top: 10px solid #efeff5;"></div>
-								<div id="main5" style="height:350px; width: 320px; float: left;border-top: 10px solid #efeff5;"></div>
-					    				</li>
-					    			</ul>
-					    		</div>
-					    		
-								<script type="text/javascript">
-						    	 	  	$(".list ul li").hide();
-						    	 	  	$(".list ul li").eq(0).show();
-						    	 	  	 $(".title ul li").hover(function(){
-						    	 	  	 	var index=$(this).index();
-						    	 	  	 	$(".list ul li").eq(index).show().siblings().hide();
-						    	 	  	 	$(".title ul li").eq(index).addClass("act").siblings().removeClass("act");
-						    	 	  	 })
-						    	</script>
-							</div>
-							</div>
-					    </div>
-					</div>
+    <style type="text/css">
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+            padding: 0;
+            margin: 0;
+        }
 
-				</div>
-			</div>
-		</div>
-		
-	
-		<script src="js/jquery-ui-1.11.0.js"></script>
-		<script src="js/select-widget-min.js"></script>
-		<script src="js/jquery.animsition.min.js"></script>
-		<script src="js/echarts.min.js"></script>
-		<script src="js/macarons%20.js"></script>
-		<script src="js/common.js"></script>
-		
-		<script>
-			$(document).ready(function() {
-  			  //初始化切换
-			  $(".animsition").animsition({
-			  
-			    inClass               :   'fade-in-right',
-			    outClass              :   'fade-out',
-			    inDuration            :    1500,
-			    outDuration           :    800,
-			    linkElement           :   '.animsition-link',
-			    // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
-			    loading               :    true,
-			    loadingParentElement  :   'body', //animsition wrapper element
-			    loadingClass          :   'animsition-loading',
-			    unSupportCss          : [ 'animation-duration',
-			                              '-webkit-animation-duration',
-			                              '-o-animation-duration'
-			                            ],
-			    //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
-			    //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
-			    
-			    overlay               :   false,
-			    
-			    overlayClass          :   'animsition-overlay-slide',
-			    overlayParentElement  :   'body'
-			  });
-			  
-			   // 基于准备好的dom，初始化echarts实例
-		        var myChart = echarts.init(document.getElementById('main'),'macarons');
-				var myChart2 = echarts.init(document.getElementById('main2'),'macarons');
-				var myChart3 = echarts.init(document.getElementById('main3'),'macarons');
-				var myChart4 = echarts.init(document.getElementById('main4'),'macarons');
-				var myChart5 = echarts.init(document.getElementById('main5'),'macarons');
-		        // 指定图表的配置项和数据
-				var date = ['2016/11/1','2016/11/2','2016/11/3','2016/11/4','2016/11/5','2016/11/6','2016/11/7','2016/11/8','2016/11/9','2016/11/10',
-				'2016/11/11','2016/11/12','2016/11/13','2016/11/14','2016/11/15','2016/11/16','2016/11/17','2016/11/18'
-				,'2016/11/19','2016/11/20','2016/11/21','2016/11/22','2016/11/23','2016/11/24','2016/11/25','2016/11/26','2016/11/27'
-				,'2016/11/28','2016/11/29','2016/11/30'];
-				
-				
-				function my_data(){
-					var data = [];
-					for( var i =0; i<30; i++){
-						data.push(Math.round(Math.random() * (500 - 100) + 100));
-					};
-					return data;
-				}
-				var option = {
-				    tooltip: {
-				        trigger: 'axis',
-				        /*formatter: function(data){
-				        	//console.log(data)
-				        	 myChart.setOption({
-						        title : {
-							        text: '会员数量' + data.value,
-							    }
-						    });
-							
-						   return data.name + '</br>' + '新增数：' + data.value + '</br>';
-						}*/
-				        
-				    },
-				    title: {
-				        text: '用户数量：1000',
-				        /*subtext: '昨日新增：',
-				        subtextStyle: {
-							fontSize:14,
-							color : '#ff4a84'
-						}*/
-				    },
-				    
-				    toolbox: {
-				        show : true,
-				         feature : {
-				            mark : {show: true},
-				            dataView : {show: true, readOnly: true},
-				            magicType : {show: true, type: ['line', 'bar']},
-				            restore : {show: true},
-				            saveAsImage : {}
-				        }
-				    },
-				    calculable : true,
-				    xAxis: {
-				        type : 'category',
-				        boundaryGap : false,
-				        data : date
-				    },
-				    yAxis: {
-				        type: 'value',
-				        boundaryGap: [0, '100%']
-				    },
-				    dataZoom: [{
-				        type: 'inside',
-				        start: 84,
-				        end: 100
-				    }, {
-				        start: 84,
-				        end: 100,
-				        handleSize: '80%',
-				        handleStyle: {
-				            color: '#fff',
-				            shadowBlur: 3,
-				            shadowColor: 'rgba(0, 0, 0, 0.6)',
-				            shadowOffsetX: 2,
-				            shadowOffsetY: 2
-				        }
-				    }],
-				    series: [
-				        {
-				            name:'新增数',
-				            type:'line',
-				            smooth:true,
-				            itemStyle: {
-				                normal: {
-				                    color: 'rgb(255, 70, 131)'
-				                }
-				            },
-				            areaStyle: {
-				                normal: {
-				                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-				                        offset: 0,
-				                        color: 'rgb(255, 158, 68)'
-				                    }, {
-				                        offset: 1,
-				                        color: 'rgb(255, 70, 131)'
-				                    }])
-				                }
-				            },
-				            data : my_data()
-				        }
-				    ]
-				};
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
 
-				var option2 = {
-				    tooltip: {
-				        trigger: 'item',
-				        formatter: function(data){
-				        	//console.log(data)
-							 myChart.setOption({
-						        title : {
-							        text: '用户数量' + data.value,
-							    }
-						    });
-							return data.name + '</br>' + '人数：' + data.value + '</br>占比：' + data.percent + '%'+'</br>';
+        fieldset, img {
+            border: 0;
+        }
+
+        a {
+            color: #5c5c5c;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #d20c58;
+        }
+
+        img {
+            margin-top: 5px;
+            margin-left: 30px;
+            inmax-width: 100%;
+        }
+
+        address, caption, cite, code, dfn, em, th, var {
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+            font-size: 100%;
+        }
+
+        q:before, q:after {
+            content: "";
+        }
+
+        /* css base */
+        body {
+            font-family: "微软雅黑";
+            font-size: 12px;
+            color: #707070;
+            line-height: 1.8;
+            background: #f6f6fc;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .clear:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .clearfix:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap {
+            width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .header {
+            border: 1px solid #dadada;
+            background: #FFFFFF;
+        }
+
+        .center {
+            margin: 40px 0;
+        }
+
+        .c_le {
+            height: 770px;
+            width: 155px;
+            background: url(left2.jpg);
+            float: left;
+
+            text-align: center;
+            padding-top: 200px;
+            box-sizing: border-box;
+        }
+
+        #my_date_set1 {
+            display: none;
+        }
+
+        .c_le ul li {
+            background: url(v1.jpg) no-repeat 6px center;
+            margin-bottom: 50px;
+        }
+
+        .c_le ul li:nth-child(2) {
+            background: url(v2.jpg) no-repeat 6px center;
+        }
+
+        .c_le ul li:nth-child(3) {
+            background: url(v3.jpg) no-repeat 6px center;
+        }
+
+        .c_le ul li a {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .bo_ri {
+            width: 80%;
+            height: 500px;
+            float: right;
+            box-sizing: border-box;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .title ul li {
+            display: inline-block;
+            width: 180px;
+            height: 28px;
+            line-height: 28px;
+            border: 1px solid #dbdbdc;
+            margin: 0 25px;
+        }
+
+        .title ul li a {
+            display: block;
+        }
+
+        .title ul li.act {
+            background: #c8c8c8;
+        }
+
+        .title ul li.act a {
+            color: #FFFFFF;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="header">
+        <img src="img/1.jpg" width="180"/>
+    </div>
+
+    <div class="center">
+        <div class="c_le">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index2.html">Chart Data</a></li>
+                <li><a href="index3.html">Map</a></li>
+            </ul>
+
+
+        </div>
+    </div>
+    <div class="bo_ri" style="height: 600px;">
+        <div class="title">
+            <ul>
+                <li class="act"><a href="#">场景1</a></li>
+                <li><a href="#">场景2</a></li>
+                <li><a href="#">场景3</a></li>
+            </ul>
+        </div>
+
+        <div class="bbo">
+            <div class="data_wrap"
+                 style="background: #efeff5; width: 100%; padding: 10px; overflow: hidden;box-sizing: border-box;">
+                <div>
+                    <div style="background: white; width: 100%; overflow: hidden;">
+                        <div class="list">
+                            <ul>
+                                <li>
+                                    <div id="main" style="height:350px; width: 940px; clear: both; padding: 10px"></div>
+                                </li>
+                                <li>
+                                    <div id="main3" style="height:350px; width: 940px; clear: both; padding: 10px"></div>
+                                </li>
+                                <li>
+                                    <div id="main4" style="height:350px; width: 940px; clear: both; padding: 10px"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <script type="text/javascript">
+                            $(".list ul li").hide();
+                            $(".list ul li").eq(0).show();
+                            $(".title ul li").hover(function () {
+                                var index = $(this).index();
+                                $(".list ul li").eq(index).show().siblings().hide();
+                                $(".title ul li").eq(index).addClass("act").siblings().removeClass("act");
+                            })
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+
+
+<script src="js/jquery-ui-1.11.0.js"></script>
+<script src="js/select-widget-min.js"></script>
+<script src="js/echarts.min.js"></script>
+<script src="js/macarons%20.js"></script>
+<script src="js/common.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $.getJSON("./1.json",function(data){
+            const myChart = echarts.init(document.getElementById('main'), 'macarons');
+            const option = {
+                title: {
+                    left: 'center',
+                    text: 'Average Income of Each City V.S. COVID-Rate'
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+                legend: {
+                    top: 30,
+                    data: ['Median Income', 'Rate of Mentioning COVID']
+                },
+                toolbox: {
+                    feature: {
+                        dataView: {show: true, readOnly: false},
+                        magicType: {show: true, type: ['line', 'bar']},
+                        restore: {show: true},
+                        saveAsImage: {show: true}
+                    }
+                },
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: data.map((item) => item.City)
+                },
+                yAxis: [
+                    {
+                        name: 'Median Income',
+                        type: 'value'
+                    },
+                    {
+                        name: 'Rate of Mentioning COVID',
+                        type: 'value'
+                    }
+                ],
+                series: [
+                    {
+                        name: 'Median Income',
+                        type: 'line',
+                        data: [47943, 46907, 51294.25, 53720.5, 50569.04444]
+                    },
+                    {
+                        name: 'Rate of Mentioning COVID',
+                        type: 'line',
+                        yAxisIndex: 1,
+                        data: [0.005736138, 0.005193906, 0.004024685, 0.007736231, 0.007150492]
+                    }
+                ]
+            }
+
+            myChart.setOption(option)
+        })
+        //场景2
+		$.getJSON("./2.json",function(data){
+            const myChart = echarts.init(document.getElementById('main3'), 'macarons');
+            const language = data.map((item) => {
+                const arr = []
+                for (let k in item) {
+                    if (k !== 'City') {
+                        if (k !== 'Median Income') {
+                            arr.push((item[k] * 100).toFixed(2))
+                        } else {
+                            arr.push(item[k])
+                        }
+                    }
+                }
+                return arr
+            })
+            let ranking = data.map((item) => {
+                const arr = []
+                for (let k in item) {
+                    if (k !== 'City') {
+                        arr.push(k)
+                    }
+                }
+                return arr
+            })
+            let ranking2 = JSON.parse(JSON.stringify(ranking))
+            console.log(ranking)
+            let series = [
+                {
+                    name: '语言1',
+                    type: 'bar',
+                    data: []
+                },
+                {
+                    name: '语言2',
+                    type: 'bar',
+                    data: []
+                },
+                {
+                    name: '语言3',
+                    type: 'bar',
+                    data: []
+                },
+                {
+                    name: '语言4',
+                    type: 'bar',
+                    data: []
+                },
+                {
+                    name: '收入',
+                    type: 'line',
+                    yAxisIndex: 1,
+                    data: []
+                }
+            ]
+            for (let i = 0; i < series.length; i++) {
+                for (let k in language) {
+                    series[i].data.push(language[k][i])
+                }
+            }
+            console.log(series)
+			var option = {
+				title: {
+                    left: 'center',
+					text: 'Top 4 Language Speaking V.S. Median Income'
+				},
+				tooltip: {
+					trigger: 'axis',
+					axisPointer: {
+						type: 'cross',
+						crossStyle: {
+							color: '#999'
 						}
-				    },
-				    toolbox: {
-				        show : true,
-				         feature : {
-				            mark : {show: true},
-				            dataView : {show: true, readOnly: false},
-				            restore : {show: true},
-				            saveAsImage : {show: true}
-				        }
-				    },
-				    legend: {
-				    	orient: 'horizontal', // 'vertical'
-				    	icon:'pie',
-				       // orient: 'vertical',
-				        x: 'right',
-				        y: 'bottom',
-				        selectedMode:true,
-				        data:['准会员','普通会员','高级会员','VIP会员','超级VIP会员']
-				    },
-				    series: [
-				        {
-				            name:'各级别会员人数',
-				            center:['50%','50%'],
-				            type:'pie',
-				            radius: ['50%', '65%'],
-				            avoidLabelOverlap: false,
-				            label: {
-				                normal: {
-				                    show: false,
-				                    position: 'center',
-				                },
-				                emphasis: {
-				                    show: true,
-				                    textStyle: {
-				                        fontSize: '20',
-				                        fontWeight: 'bold'
-				                    }
-				                }
-				            },
-				            labelLine: {
-				                normal: {
-				                    show: false
-				                }
-				            },
-				            data:[
-				                {value:335, name:'准会员'},
-				                {value:310, name:'普通会员'},
-				                {value:234, name:'高级会员'},
-				                {value:135, name:'VIP会员'},
-				                {value:1548, name:'超级VIP会员'}
-				            ]
-				        }
-				    ]
-				};
-				var option3 = {
-				    title : {
-				        text: '各级别会员变迁情况'
-				    },
-				    tooltip : {
-				        trigger: 'axis',
-				        /* axisPointer : {            // 坐标轴指示器，坐标轴触发有效
-				            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-				        }*/
-				    },
-				    legend: {
-				        data:['普通会员','高级会员','VIP会员','超级VIP会员']
-				    },
-				    toolbox: {
-				        show : true,
-				        feature : {
-				            mark : {show: true},
-				            dataView : {show: true, readOnly: false},
-				            magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
-				            restore : {show: true},
-				            saveAsImage : {show: true}
-				        }
-				    },
-				    calculable : true,
-				    xAxis : [
-				        {
-				            type : 'category',
-				            boundaryGap : true,
-				            data : date
-				        }
-				    ],
-				    yAxis : [
-				        {
-				            type : 'value'
-				        }
-				    ],
-				     grid: {
-				        left: '3%',
-				        right: '4%',
-				        containLabel: true
-				    },
-				    dataZoom: [{
-				        type: 'inside',
-				        start: 74,
-				        end: 100,
-				    }, {
-				        start: 74,
-				        end: 100,
-				        handleSize: '80%',
-				        handleStyle: {
-				            color: '#fff',
-				            shadowBlur: 3,
-				            shadowColor: 'rgba(0, 0, 0, 0.6)',
-				            shadowOffsetX: 2,
-				            shadowOffsetY: 2
-				        }
-				    }],
-				    series : [
-				        {
-				            name:'普通会员',
-				            type:'bar',
-				            stack: '总量',
-				            barMaxWidth : 30,
-				            //itemStyle: {normal: {areaStyle: {type: 'default'}}},
-				            data:my_data()
-				        },
-				        {
-				            name:'高级会员',
-				            type:'bar',
-				            stack: '总量',
-				            //itemStyle: {normal: {areaStyle: {type: 'default'}}},
-				            data:my_data()
-				        },
-				        {
-				            name:'VIP会员',
-				            type:'bar',
-				            stack: '总量',
-				            //itemStyle: {normal: {areaStyle: {type: 'default'}}},
-				            data:my_data()
-				        },
-				        {
-				            name:'超级VIP会员',
-				            type:'bar',
-				            stack: '总量',
-				            //itemStyle: {normal: {areaStyle: {type: 'default'}}},
-				            data:my_data()
-				        }
-				    ]
-				};
-				var option4 = {
-				    tooltip: {
-				        trigger: 'axis',
-				    },
-				    title: {
-				        text: '新老顾客数量',
-				        /*subtext: '昨日新增：',
-				        subtextStyle: {
-							fontSize:14,
-							color : '#ff4a84'
-						}*/
-				    },
-				    
-				    toolbox: {
-				        show : true,
-				         feature : {
-				            mark : {show: true},
-				            dataView : {show: true, readOnly: false},
-				            magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
-				            restore : {show: true},
-				            saveAsImage : {show: true}
-				        }
-				    },
-				    legend: {
-				        data:['新会员','老会员','潜客']
-				    },
-				    calculable : true,
-				    xAxis: {
-				        type : 'category',
-				        boundaryGap : false,
-				        data : date
-				    },
-				    yAxis: {
-				        type: 'value',
-				        boundaryGap: [0, '100%']
-				    },
-				    dataZoom: [{
-				        type: 'inside',
-				        start: 84,
-				        end: 100
-				    }, {
-				        start: 84,
-				        end: 100,
-				        handleSize: '80%',
-				        handleStyle: {
-				            color: '#fff',
-				            shadowBlur: 3,
-				            shadowColor: 'rgba(0, 0, 0, 0.6)',
-				            shadowOffsetX: 2,
-				            shadowOffsetY: 2
-				        }
-				    }],
-				    series: [
-				        {
-				            name:'新会员',
-				            type:'line',
-				            smooth:false,
-				            stack: '总量',
-				            itemStyle: {normal: {areaStyle: {type: 'default'}}},
-				            data:my_data()
-				        },
-				        {
-				            name:'老会员',
-				            type:'line',
-				            stack: '总量',
-				            smooth:true,
-				            itemStyle: {normal: {areaStyle: {type: 'default'}}},
-				            data:my_data()
-				        },
-				        {
-				            name:'潜客',
-				            type:'line',
-				            stack: '总量',
-				            smooth:true,
-				            itemStyle: {normal: {areaStyle: {type: 'default'}}},
-				            data:my_data()
-				        }
-				    ]
-				};
-
-				var option5 = {
-				    tooltip: {
-				        trigger: 'item',
-				        formatter: function(data){
-				        	//console.log(data)
-							 myChart.setOption({
-						        title : {
-							        text: '会员数量' + data.value,
-							    }
-						    });
-							return data.name + '</br>' + '人数：' + data.value + '</br>占比：' + data.percent + '%'+'</br>';
+					},
+                    formatter: function (params) {
+                        let str = ''
+                        params.forEach((item, index) => {
+                            console.log(ranking)
+                            str += `<span style="width: 8px; height: 8px; margin-right: 5px; border-radius: 50%; display: inline-block; background-color: ${item.color}"></span> ${ranking[item.dataIndex][index]} : ${item.value}<br>`
+                        })
+                        return str
+                    }
+				},
+				toolbox: {
+					feature: {
+						dataView: {show: true, readOnly: false},
+						magicType: {show: true, type: ['line', 'bar']},
+						restore: {show: true},
+						saveAsImage: {show: true}
+					}
+				},
+				legend: {
+				    top: 30,
+					data: ['语言1']
+				},
+				xAxis: [
+					{
+						type: 'category',
+						data: data.map((item) => item.City),
+						axisPointer: {
+							type: 'shadow'
 						}
-				    },
-				    toolbox: {
-				        show : true,
-				         feature : {
-				            mark : {show: true},
-				            dataView : {show: true, readOnly: false},
-				            restore : {show: true},
-				            saveAsImage : {show: true}
-				        }
-				    },
-				    legend: {
-				    	orient: 'horizontal', // 'vertical'
-				    	icon:'pie',
-				       // orient: 'vertical',
-				        x: 'right',
-				        y: 'bottom',
-				        selectedMode:true,
-				        data:['新会员','老会员','潜客']
-				    },
-				    series: [
-				        {
-				            name:'各级别会员人数',
-				            center:['50%','50%'],
-				            type:'pie',
-				            radius: ['50%', '65%'],
-				            avoidLabelOverlap: false,
-				            label: {
-				                normal: {
-				                    show: false,
-				                    position: 'center'
-				                },
-				                emphasis: {
-				                    show: true,
-				                    textStyle: {
-				                        fontSize: '20',
-				                        fontWeight: 'bold'
-				                    }
-				                }
-				            },
-				            labelLine: {
-				                normal: {
-				                    show: false
-				                }
-				            },
-				            data:[
-				                {value:335, name:'新会员'},
-				                {value:310, name:'老会员'},
-				                {value:210, name:'潜客'}
-				            ]
-				        }
-				    ]
-				};                    
-				
-				
-		        // 使用刚指定的配置项和数据显示图表。
-		        myChart.setOption(option);
-			 	myChart2.setOption(option2);
-			 	myChart3.setOption(option3);
-			 	myChart4.setOption(option4);
-			 	myChart5.setOption(option5);
-			 	
-			 	myChart.on('mousemove',function(params){ // 控制台打印数据的名称 
-			 		$('#my_date_set1').html(params.name);
-					myChart2.clear();
-					option2.series[0].data = [
-						{value:900, name:'准会员'},
-						{value:150, name:'普通会员'},
-						{value:150, name:'高级会员'},
-						{value:150, name:'VIP会员'},
-						{value:150, name:'超级VIP会员'}
-					];
-					myChart2.setOption(option2,true);
-					/*myChart2.setOption({
-				        series: [
-					        {
-					            data:[
-					                {value:100, name:'准会员'},
-					                {value:310, name:'普通会员'},
-					                {value:234, name:'高级会员'},
-					                {value:135, name:'VIP会员'},
-					                {value:params.value, name:'超级VIP会员'}
-					            ]
-					        }
-					    ]
-				    });*/
-			 	});
-			 	myChart4.on('mousemove',function(params){ // 控制台打印数据的名称 
-			 		$('#my_date_set2').html(params.name)
-					myChart5.setOption({
-				        series: [
-					        {
-					            data:[
-					                {value:params.value, name:'新会员'},
-				                	{value:310, name:'老会员'},
-				                	{value:210, name:'潜客'}
-					            ]
-					        }
-					    ]
-				    });
-			 	});
-			 	
-			});
-		</script>
-		
-		
-	</body>
+					}
+				],
+				yAxis: [
+					{
+						type: 'value',
+						name: '语言'
+					},
+					{
+						type: 'value',
+						name: '收入'
+					}
+				],
+                series: series
+			};
+			myChart.setOption(option);
+            myChart.on('legendselectchanged', function(obj) {
+                console.log(obj)
+                if (obj.selected['语言1']) {
+                    ranking = JSON.parse(JSON.stringify(ranking2))
+                } else {
+                    ranking = ranking.map((item) => {
+                        item.splice(0, 1)
+                        return item
+                    })
+                }
+                console.log(ranking)
+            })
+		})
+        $.getJSON("./3.json",function(data){
+            const myChart = echarts.init(document.getElementById('main4'), 'macarons');
+            var option = {
+                title: {
+                    left: 'center',
+                    text: 'Average Sentiment Per Twitt V.S. Number of Migration'
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross',
+                        crossStyle: {
+                            color: '#999'
+                        }
+                    }
+                },
+                toolbox: {
+                    feature: {
+                        dataView: {show: true, readOnly: false},
+                        magicType: {show: true, type: ['line', 'bar']},
+                        restore: {show: true},
+                        saveAsImage: {show: true}
+                    }
+                },
+                legend: {
+                    top: 30,
+                    data: ['Sentiment', 'Income']
+                },
+                xAxis: [
+                    {
+                        type: 'category',
+                        data: data.map((item) => item.City)
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                        name: 'Sentiment'
+                    },
+                    {
+                        type: 'value',
+                        name: 'Income'
+                    }
+                ],
+                series: [
+                    {
+                        name: '降水量',
+                        type: 'bar',
+                        data: [13714, 4060, 4728, 12736, 3021]
+                    },
+                    {
+                        name: '平均温度',
+                        type: 'line',
+                        yAxisIndex: 1,
+                        data: [50569.4, 53720.5, 46907, 47943, 51294.25]
+                    }
+                ]
+            };
+            myChart.setOption(option);
+        })
+    });
+</script>
+
+
+</body>
 </html>

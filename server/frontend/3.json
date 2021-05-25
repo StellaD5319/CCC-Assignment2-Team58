@@ -1,0 +1,27 @@
+[
+  {
+    "City": "Sydney",
+    "Sentiment": 13714,
+    "Income": 50569.4
+  },
+  {
+    "City": "Perth",
+    "Sentiment": 4060,
+    "Income": 53720.5
+  },
+  {
+    "City": "Brisban",
+    "Sentiment": 4728,
+    "Income": 46907
+  },
+  {
+    "City": "Melbourne",
+    "Sentiment": 12736,
+    "Income": 47943
+  },
+  {
+    "City": "Adelaide",
+    "Sentiment": 3021,
+    "Income": 51294.25
+  }
+]
