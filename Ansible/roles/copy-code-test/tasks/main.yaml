@@ -1,0 +1,19 @@
+---
+
+#- name: add new directory
+#  file:
+#    path: /test
+#    state: directory
+
+- name: Remove
+  file:
+    path: ~/test/twitter_search.py
+    state: absent
+
+
+- name: copy code
+  copy:
+    #src: "../twitter_search.py"
+    #dest: ~/test/
+    src: "../CCC-Assignment2-Team58-main"
+    dest: ~/CCC/

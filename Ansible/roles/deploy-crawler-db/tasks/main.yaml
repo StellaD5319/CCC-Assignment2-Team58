@@ -1,0 +1,69 @@
+---
+
+#- name: Shut down previous container
+#  become: yes
+#  shell: docker stop
+#  args:
+#    chdir: /home/ubuntu/COMP90024/harvest
+
+
+- name: upload harvest Dockerfile
+  become: yes
+  copy:
+    src: "../CCC-Assignment2-Team58-main/harvest" #nginx.conf
+    dest: '{{ remote_working_directory }}'
+
+- name: Modify Docker configuration -1
+  become: yes
+  template:
+    src: Dockerfile.j2
+    dest: '/home/ubuntu/COMP90024/harvest/Dockerfile'
+
+
+
+- name: Modify Docker configuration -2
+  become: yes
+  template:
+    src: Dockerfile_2.j2
+    dest: '/home/ubuntu/COMP90024/harvest/Dockerfile_2'
+
+
+- name: Modify configuration - python
+  become: yes
+  template:
+    src: search_tweet_interface.py.j2
+    dest: '/home/ubuntu/COMP90024/harvest/search_tweet_interface.py'
+
+
+
+- name: Start server -1
+  become: yes
+  shell: docker build -t search_1 -f Dockerfile .
+  args:
+    chdir: /home/ubuntu/COMP90024/harvest
+# sudo docker build -t search_1 -f Dockerfile .
+
+
+- name: Start server -2
+  become: yes
+  shell: docker build -t search_2 -f Dockerfile_2 .
+  args:
+    chdir: /home/ubuntu/COMP90024/harvest
+# sudo docker build -t search_2 -f Dockerfile_2 .
+
+
+- name: Run container -1
+  become: yes
+  shell: docker run search_1 &
+  args:
+    chdir: /home/ubuntu/COMP90024/harvest
+  ignore_errors: yes
+# sudo docker run search_1
+
+- name: Run container -2
+  become: yes
+  shell: docker run search_2 &
+  args:
+    chdir: /home/ubuntu/COMP90024/harvest
+  ignore_errors: yes
+# sudo docker run search_2
