@@ -1,0 +1,42 @@
+[
+  {
+    "City": "Sydney",
+    "English": 0.859947756,
+    "Spanish": 0.017636714,
+    "Arabic": 0.014819621,
+    "Turkish": 0.011370815,
+    "Median Income": 50569.4
+  },
+  {
+    "City": "Perth",
+    "English": 0.864388093,
+    "Arabic": 0.035281147,
+    "in": 0.028114664,
+    "Tatalog": 0.012679162,
+    "Median Income": 53720.5
+  },
+  {
+    "City": "Brisban",
+    "English": 0.760110294,
+    "in": 0.019679931,
+    "Japanese": 0.01740917,
+    "Spanish": 0.016706315,
+    "Median Income": 46907
+  },
+  {
+    "City": "Melbourne",
+    "English": 0.872805823,
+    "Greek": 0.026232826,
+    "Japanese": 0.01934379,
+    "Spanish": 0.009924882,
+    "Median Income": 47943
+  },
+  {
+    "City": "Adelaide",
+    "English": 0.913318333,
+    "Chinese": 0.015429122,
+    "Spanish": 0.012750455,
+    "Farsi": 0.007393121,
+    "Median Income": 51294.25
+  }
+]

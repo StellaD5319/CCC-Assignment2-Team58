@@ -176,7 +176,10 @@
       },
       "properties": {
         "sa4_name": "Adelaide - Central and Hills",
-        "Income": 54717
+        "Income": 54717,
+        "Emotion": 0,
+        "Language": 0,
+        "covid_rate": 0
       }
     },
     {
@@ -334,7 +337,10 @@
       },
       "properties": {
         "sa4_name": "Adelaide - North",
-        "Income": 44681
+        "Income": 44681,
+        "Emotion": 0,
+        "Language": 0,
+        "covid_rate": 0
       }
     },
     {
@@ -432,7 +438,12 @@
       },
       "properties": {
         "sa4_name": "Adelaide - South",
-        "Income": 54645.5
+        "Income": 54645.5,
+        "Emotion": 0,
+        "Language": {
+          "en": 3
+        },
+        "covid_rate": 0
       }
     },
     {
@@ -588,7 +599,25 @@
       },
       "properties": {
         "sa4_name": "Adelaide - West",
-        "Income": 47943
+        "Income": 47943,
+        "Emotion": 314,
+        "Language": {
+          "en": 461,
+          "et": 2,
+          "pt": 3,
+          "no": 1,
+          "ja": 3,
+          "es": 8,
+          "und": 2,
+          "in": 7,
+          "fr": 2,
+          "tl": 3,
+          "de": 3,
+          "ro": 1,
+          "ca": 1,
+          "el": 1
+        },
+        "covid_rate": 0.002008032128514056
       }
     }
   ]

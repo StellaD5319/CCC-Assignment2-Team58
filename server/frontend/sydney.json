@@ -572,7 +572,23 @@
       },
       "properties": {
         "sa4_name": "Central Coast",
-        "Income": 43672.5
+        "Income": 43672.5,
+        "Emotion": 125,
+        "Language": {
+          "en": 145,
+          "ca": 1,
+          "pt": 1,
+          "tl": 1,
+          "es": 1,
+          "fr": 2,
+          "und": 2,
+          "ht": 1,
+          "nl": 1,
+          "de": 1,
+          "da": 1,
+          "fi": 1
+        },
+        "covid_rate": 0.006329113924050633
       }
     },
     {
@@ -1146,7 +1162,17 @@
       },
       "properties": {
         "sa4_name": "Sydney - Baulkham Hills and Hawkesbury",
-        "Income": 50529.5
+        "Income": 50529.5,
+        "Emotion": 95,
+        "Language": {
+          "en": 77,
+          "nl": 6,
+          "pt": 4,
+          "ja": 1,
+          "de": 1,
+          "ca": 1
+        },
+        "covid_rate": 0
       }
     },
     {
@@ -1216,7 +1242,14 @@
       },
       "properties": {
         "sa4_name": "Sydney - Blacktown",
-        "Income": 47584
+        "Income": 47584,
+        "Emotion": 31,
+        "Language": {
+          "en": 56,
+          "de": 1,
+          "et": 1
+        },
+        "covid_rate": 0.017241379310344827
       }
     },
     {
@@ -1364,7 +1397,24 @@
       },
       "properties": {
         "sa4_name": "Sydney - City and Inner South",
-        "Income": 52368.67
+        "Income": 52368.67,
+        "Emotion": 608,
+        "Language": {
+          "en": 751,
+          "nl": 1,
+          "ja": 10,
+          "ca": 1,
+          "pt": 2,
+          "ko": 1,
+          "es": 2,
+          "tl": 1,
+          "in": 1,
+          "it": 1,
+          "fr": 1,
+          "ro": 2,
+          "ht": 1
+        },
+        "covid_rate": 0.005161290322580645
       }
     },
     {
@@ -1532,7 +1582,14 @@
       },
       "properties": {
         "sa4_name": "Sydney - Eastern Suburbs",
-        "Income": 60231
+        "Income": 60231,
+        "Emotion": 43,
+        "Language": {
+          "en": 68,
+          "tl": 1,
+          "fr": 4
+        },
+        "covid_rate": 0
       }
     },
     {
@@ -1674,7 +1731,10 @@
       },
       "properties": {
         "sa4_name": "Sydney - Inner South West",
-        "Income": 43670
+        "Income": 43670,
+        "Emotion": 0,
+        "Language": 0,
+        "covid_rate": 0
       }
     },
     {
@@ -1790,7 +1850,28 @@
       },
       "properties": {
         "sa4_name": "Sydney - Inner West",
-        "Income": 56264
+        "Income": 56264,
+        "Emotion": 355,
+        "Language": {
+          "en": 690,
+          "fi": 1,
+          "in": 4,
+          "it": 1,
+          "nl": 3,
+          "de": 1,
+          "cy": 1,
+          "pt": 1,
+          "ca": 5,
+          "ja": 8,
+          "fr": 1,
+          "vi": 1,
+          "et": 3,
+          "es": 3,
+          "cs": 1,
+          "und": 5,
+          "tl": 1
+        },
+        "covid_rate": 0
       }
     },
     {
@@ -2034,7 +2115,12 @@
       },
       "properties": {
         "sa4_name": "Sydney - North Sydney and Hornsby",
-        "Income": 58834
+        "Income": 58834,
+        "Emotion": 28,
+        "Language": {
+          "en": 16
+        },
+        "covid_rate": 0
       }
     },
     {
@@ -2334,7 +2420,14 @@
       },
       "properties": {
         "sa4_name": "Sydney - Northern Beaches",
-        "Income": 52121
+        "Income": 52121,
+        "Emotion": 31,
+        "Language": {
+          "en": 29,
+          "ja": 1,
+          "tr": 2
+        },
+        "covid_rate": 0
       }
     },
     {
@@ -2572,7 +2665,10 @@
       },
       "properties": {
         "sa4_name": "Sydney - Outer South West",
-        "Income": 49803
+        "Income": 49803,
+        "Emotion": 0,
+        "Language": 0,
+        "covid_rate": 0
       }
     },
     {
@@ -3014,7 +3110,10 @@
       },
       "properties": {
         "sa4_name": "Sydney - Outer West and Blue Mountains",
-        "Income": 48103.5
+        "Income": 48103.5,
+        "Emotion": 0,
+        "Language": 0,
+        "covid_rate": 0
       }
     },
     {
@@ -3108,7 +3207,13 @@
       },
       "properties": {
         "sa4_name": "Sydney - Parramatta",
-        "Income": 44011.5
+        "Income": 44011.5,
+        "Emotion": 16,
+        "Language": {
+          "es": 1,
+          "en": 14
+        },
+        "covid_rate": 0
       }
     },
     {
@@ -3162,7 +3267,14 @@
       },
       "properties": {
         "sa4_name": "Sydney - Ryde",
-        "Income": 50958
+        "Income": 50958,
+        "Emotion": 11,
+        "Language": {
+          "en": 16,
+          "ja": 1,
+          "es": 1
+        },
+        "covid_rate": 0
       }
     },
     {
@@ -3304,7 +3416,13 @@
       },
       "properties": {
         "sa4_name": "Sydney - South West",
-        "Income": 47507
+        "Income": 47507,
+        "Emotion": -2,
+        "Language": {
+          "en": 8,
+          "ro": 1
+        },
+        "covid_rate": 0
       }
     },
     {
@@ -3642,7 +3760,10 @@
       },
       "properties": {
         "sa4_name": "Sydney - Sutherland",
-        "Income": 52878
+        "Income": 52878,
+        "Emotion": 0,
+        "Language": 0,
+        "covid_rate": 0
       }
     }
   ]

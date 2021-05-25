@@ -1,0 +1,27 @@
+[
+  {
+    "City": "Melbourne",
+    "Median Income": 47943,
+    "Rate of Mentioning COVID": 0.005736138
+  },
+  {
+    "City": "Brisban",
+    "Median Income": 46907,
+    "Rate of Mentioning COVID": 0.005193906
+  },
+  {
+    "City": "Adelaide",
+    "Median Income": 51294.25,
+    "Rate of Mentioning COVID": 0.004024685
+  },
+  {
+    "City": "Perth",
+    "Median Income": 53720.5,
+    "Rate of Mentioning COVID": 0.007736231
+  },
+  {
+    "City": "Sydney",
+    "Median Income": 50569.04444,
+    "Rate of Mentioning COVID": 0.007150492
+  }
+]

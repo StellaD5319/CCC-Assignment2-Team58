@@ -314,7 +314,17 @@
       },
       "properties": {
         "sa4_name": "Mandurah",
-        "Income": 48157
+        "Income": 48157,
+        "Emotion": 18,
+        "Language": {
+          "en": 47,
+          "in": 1,
+          "pl": 1,
+          "pt": 7,
+          "fr": 2,
+          "it": 1,
+          "de": 1
+        }
       }
     },
     {
@@ -380,7 +390,21 @@
       },
       "properties": {
         "sa4_name": "Perth - Inner",
-        "Income": 63043
+        "Income": 63043,
+        "Emotion": 131,
+        "Language": {
+          "en": 186,
+          "de": 2,
+          "in": 1,
+          "et": 1,
+          "ca": 1,
+          "da": 6,
+          "tl": 1,
+          "fr": 1,
+          "pt": 1,
+          "no": 1
+        },
+        "covid_rate": 0
       }
     },
     {
@@ -618,7 +642,10 @@
       },
       "properties": {
         "sa4_name": "Perth - North East",
-        "Income": 52597
+        "Income": 52597,
+        "Emotion": 0,
+        "Language": 0,
+        "covid_rate": 0
       }
     },
     {
@@ -720,7 +747,10 @@
       },
       "properties": {
         "sa4_name": "Perth - North West",
-        "Income": 54208
+        "Income": 54208,
+        "Emotion": 0,
+        "Language": 0,
+        "covid_rate": 0
       }
     },
     {
@@ -910,7 +940,10 @@
       },
       "properties": {
         "sa4_name": "Perth - South East",
-        "Income": 53233
+        "Income": 53233,
+        "Emotion": 0,
+        "Language": 0,
+        "covid_rate": 0
       }
     },
     {
@@ -1338,7 +1371,18 @@
       },
       "properties": {
         "sa4_name": "Perth - South West",
-        "Income": 55604
+        "Income": 55604,
+        "Emotion": 74,
+        "Language": {
+          "en": 81,
+          "ja": 3,
+          "pt": 2,
+          "ro": 4,
+          "ht": 5,
+          "de": 1,
+          "ca": 1
+        },
+        "covid_rate": 0
       }
     }
   ]
