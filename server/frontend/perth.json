@@ -315,7 +315,7 @@
       "properties": {
         "sa4_name": "Mandurah",
         "Income": 48157,
-        "Emotion": 18,
+        "Emotion": 0.3,
         "Language": {
           "en": 47,
           "in": 1,
@@ -391,7 +391,7 @@
       "properties": {
         "sa4_name": "Perth - Inner",
         "Income": 63043,
-        "Emotion": 131,
+        "Emotion": 0.65,
         "Language": {
           "en": 186,
           "de": 2,
@@ -1372,7 +1372,7 @@
       "properties": {
         "sa4_name": "Perth - South West",
         "Income": 55604,
-        "Emotion": 74,
+        "Emotion": 0.76,
         "Language": {
           "en": 81,
           "ja": 3,

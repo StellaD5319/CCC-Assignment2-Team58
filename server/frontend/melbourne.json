@@ -81,7 +81,7 @@
       "properties": {
         "sa4_name": "Melbourne - Inner",
         "Income": 54717,
-        "Emotion": 523,
+        "Emotion": 0.65,
         "Language": {
           "en": 765,
           "und": 3,
@@ -172,7 +172,7 @@
       "properties": {
         "sa4_name": "Melbourne - Inner East",
         "Income": 44681,
-        "Emotion": 47,
+        "Emotion": 0.27,
         "Language": {
           "en": 166,
           "ko": 1,
@@ -274,7 +274,7 @@
       "properties": {
         "sa4_name": "Melbourne - Inner South",
         "Income": 54645.5,
-        "Emotion": 164,
+        "Emotion": 0.89,
         "Language": {
           "en": 184,
           "ro": 1
@@ -719,7 +719,7 @@
       "properties": {
         "sa4_name": "Melbourne - North West",
         "Income": 48630,
-        "Emotion": 41,
+        "Emotion": 1.86,
         "Language": {
           "fr": 18,
           "en": 4
@@ -2092,7 +2092,7 @@
       "properties": {
         "sa4_name": "Mornington Peninsula",
         "Income": 43904,
-        "Emotion": 386,
+        "Emotion": 0.58,
         "Language": {
           "en": 469,
           "in": 35,

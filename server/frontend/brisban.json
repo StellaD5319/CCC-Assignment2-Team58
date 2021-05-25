@@ -707,7 +707,7 @@
       "properties": {
         "sa4_name": "Brisbane - East",
         "Income": 43672.5,
-        "Emotion": 286,
+        "Emotion": 0.78,
         "Language": {
           "en": 348,
           "in": 3,
@@ -805,7 +805,7 @@
       "properties": {
         "sa4_name": "Brisbane - North",
         "Income": 50529.5,
-        "Emotion": 3,
+        "Emotion": 0.33,
         "Language": {
           "en": 9
         },
@@ -1131,7 +1131,7 @@
       "properties": {
         "sa4_name": "Brisbane - West",
         "Income": 52368.67,
-        "Emotion": 96,
+        "Emotion": 0.93,
         "Language": {
           "en": 99,
           "ja": 2,
@@ -1267,7 +1267,7 @@
       "properties": {
         "sa4_name": "Brisbane Inner City",
         "Income": 60231,
-        "Emotion": 188,
+        "Emotion": 0.79,
         "Language": {
           "en": 228,
           "fr": 1,
@@ -2885,7 +2885,7 @@
       "properties": {
         "sa4_name": "Moreton Bay - North",
         "Income": 58834,
-        "Emotion": 1974,
+        "Emotion": 0.83,
         "Language": {
           "en": 218,
           "fr": 2,
