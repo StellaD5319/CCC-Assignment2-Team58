@@ -390,7 +390,7 @@
       },
       "properties": {
         "sa4_name": "Perth - Inner",
-        "Income": 63043,
+        "Income": 61685,
         "Emotion": 131,
         "Language": {
           "en": 186,
@@ -642,7 +642,7 @@
       },
       "properties": {
         "sa4_name": "Perth - North East",
-        "Income": 52597,
+        "Income": 52743,
         "Emotion": 0,
         "Language": 0,
         "covid_rate": 0
@@ -747,7 +747,7 @@
       },
       "properties": {
         "sa4_name": "Perth - North West",
-        "Income": 54208,
+        "Income": 53500,
         "Emotion": 0,
         "Language": 0,
         "covid_rate": 0
@@ -940,7 +940,7 @@
       },
       "properties": {
         "sa4_name": "Perth - South East",
-        "Income": 53233,
+        "Income": 51806,
         "Emotion": 0,
         "Language": 0,
         "covid_rate": 0
@@ -1371,7 +1371,7 @@
       },
       "properties": {
         "sa4_name": "Perth - South West",
-        "Income": 55604,
+        "Income": 55180,
         "Emotion": 74,
         "Language": {
           "en": 81,

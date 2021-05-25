@@ -706,7 +706,7 @@
       },
       "properties": {
         "sa4_name": "Brisbane - East",
-        "Income": 43672.5,
+        "Income": 49737,
         "Emotion": 286,
         "Language": {
           "en": 348,
@@ -804,7 +804,7 @@
       },
       "properties": {
         "sa4_name": "Brisbane - North",
-        "Income": 50529.5,
+        "Income": 51527,
         "Emotion": 3,
         "Language": {
           "en": 9
@@ -903,7 +903,7 @@
       },
       "properties": {
         "sa4_name": "Brisbane - South",
-        "Income": 47584,
+        "Income": 47443,
         "Emotion": 0,
         "Language": 0,
         "covid_rate": 0
@@ -1130,7 +1130,7 @@
       },
       "properties": {
         "sa4_name": "Brisbane - West",
-        "Income": 52368.67,
+        "Income": 53307,
         "Emotion": 96,
         "Language": {
           "en": 99,
@@ -1266,7 +1266,7 @@
       },
       "properties": {
         "sa4_name": "Brisbane Inner City",
-        "Income": 60231,
+        "Income": 55557,
         "Emotion": 188,
         "Language": {
           "en": 228,
@@ -1788,7 +1788,7 @@
       },
       "properties": {
         "sa4_name": "Ipswich",
-        "Income": 43670,
+        "Income": 46527,
         "Emotion": 0,
         "Language": 0,
         "covid_rate": 0
@@ -2141,7 +2141,7 @@
       },
       "properties": {
         "sa4_name": "Logan - Beaudesert",
-        "Income": 56264,
+        "Income": 45567,
         "Emotion": 0,
         "Language": 0,
         "covid_rate": 0
@@ -2884,7 +2884,7 @@
       },
       "properties": {
         "sa4_name": "Moreton Bay - North",
-        "Income": 58834,
+        "Income": 42981,
         "Emotion": 1974,
         "Language": {
           "en": 218,
@@ -3060,7 +3060,7 @@
       },
       "properties": {
         "sa4_name": "Moreton Bay - South",
-        "Income": 52121,
+        "Income": 50772,
         "Emotion": 0,
         "Language": 0,
         "covid_rate": 0.010309278350515464

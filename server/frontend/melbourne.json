@@ -80,7 +80,7 @@
       },
       "properties": {
         "sa4_name": "Melbourne - Inner",
-        "Income": 54717,
+        "Income": 54176,
         "Emotion": 523,
         "Language": {
           "en": 765,
@@ -171,7 +171,7 @@
       },
       "properties": {
         "sa4_name": "Melbourne - Inner East",
-        "Income": 44681,
+        "Income": 49512,
         "Emotion": 47,
         "Language": {
           "en": 166,
@@ -273,7 +273,7 @@
       },
       "properties": {
         "sa4_name": "Melbourne - Inner South",
-        "Income": 54645.5,
+        "Income": 53035,
         "Emotion": 164,
         "Language": {
           "en": 184,
@@ -505,7 +505,7 @@
       },
       "properties": {
         "sa4_name": "Melbourne - North East",
-        "Income": 47943,
+        "Income": 46982,
         "Emotion": 0,
         "Language": 0,
         "covid_rate": 0
@@ -718,7 +718,7 @@
       },
       "properties": {
         "sa4_name": "Melbourne - North West",
-        "Income": 48630,
+        "Income": 45421,
         "Emotion": 41,
         "Language": {
           "fr": 18,
@@ -966,7 +966,7 @@
       },
       "properties": {
         "sa4_name": "Melbourne - Outer East",
-        "Income": 46226,
+        "Income": 46139,
         "Emotion": 0,
         "Language": 0,
         "covid_rate": 0
@@ -1195,7 +1195,7 @@
       },
       "properties": {
         "sa4_name": "Melbourne - South East",
-        "Income": 45302,
+        "Income": 43878,
         "Emotion": 0,
         "Language": 0,
         "covid_rate": 0
@@ -1400,7 +1400,7 @@
       },
       "properties": {
         "sa4_name": "Melbourne - West",
-        "Income": 48172,
+        "Income": 46964,
         "Emotion": 0,
         "Language": 0,
         "covid_rate": 0
@@ -2091,7 +2091,7 @@
       },
       "properties": {
         "sa4_name": "Mornington Peninsula",
-        "Income": 43904,
+        "Income": 43979,
         "Emotion": 386,
         "Language": {
           "en": 469,
