@@ -1,0 +1,43 @@
+---
+- name: Install docker-compose
+  tags: 'docker'
+  become: yes
+  pip:
+    name: ['docker-compose']
+    state: latest
+
+
+- name: create proxy directory for docker
+  tags: 'docker_proxy'
+  become: yes
+  file:
+    path: "/etc/systemd/system/docker.service.d/"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    recurse: yes
+    state: directory
+
+- name: create proxy file for docker
+  file:
+    path: "/etc/systemd/system/docker.service.d/http-proxy.conf"
+    state: touch
+
+- name: Add proxy for docker
+  become: yes
+  blockinfile:
+    path: /etc/systemd/system/docker.service.d/http-proxy.conf
+    block: |
+      [Service]
+      Environment="HTTP_PROXY=http://wwwproxy.unimelb.edu.au:8000/" "HTTPS_PROXY=http://wwwproxy.unimelb.edu.au:8000/" "http_proxy=http://wwwproxy.unimelb.edu.au:8000/" "https_proxy=http://wwwproxy.unimelb.edu.au:8000/" "no_proxy=localhost, 127.0.0.1, localaddress, 172.16.0.0/12, /melbourne.rc.nectar.org.au, .storage.unimelb.edu.au, .cloud.unimelb.edu.au"
+- name: flush docker proxy files
+  become: yes
+  shell: systemctl daemon-reload
+
+- name: restart docker
+  become: yes
+  shell: systemctl restart docker
+
+
+- name: add user to docker group 
+  become: yes
+  shell: gpasswd -a {{ansible_user}} docker

@@ -1,0 +1,19 @@
+---
+ansible_python_interpreter: /usr/bin/python3
+ansible_user: ubuntu
+ansible_ssh_private_key_file: ~/cloud.key
+ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+remote_working_directory: /home/ubuntu/COMP90024
+
+
+# CouchDB
+couchdb_user: ccc58
+couchdb_pass: ccc58
+couchdb_VERSION: '3.1.1'
+couchdb_port: 5984
+
+# Docker
+docker_proxy_config_path: /etc/systemd/system/docker.service.d
+
+
+# Dynamical variables

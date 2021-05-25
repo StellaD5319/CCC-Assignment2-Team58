@@ -1,0 +1,29 @@
+---
+
+- name: Install snapd, jq
+  become: yes
+  apt:
+    name: ['snapd', 'jq']
+    state: latest
+    update_cache: yes
+# sudo apt-get update; sudo apt-get install snapd jq -y
+
+
+
+- name: Install couchdb
+  become: yes
+  shell: snap install couchdb
+# sudo snap install couchdb
+
+
+- name: Modify CouchDB configuration file
+  become: yes
+  template:
+    src: local.ini.j2
+    dest: '/var/snap/couchdb/9/etc/local.ini'
+
+
+- name: Restart couchdb
+  become: yes
+  shell: snap restart couchdb.server
+# sudo snap restart couchdb.server

@@ -1,0 +1,33 @@
+---
+
+# name: Shut down previous server
+#  become: yes
+#  shell: docker-compose down --rmi local --remove-orphans
+#  args:
+#    chdir: /home/ubuntu/COMP90024/server
+
+- name: upload nginx Dockerfile
+  become: yes
+  copy:
+    src: "../CCC-Assignment2-Team58-main/server" #nginx.conf
+    dest: '{{ remote_working_directory }}'
+
+
+- name: Modify nginx configuration file
+  become: yes
+  template:
+    src: nginx.conf.j2
+    dest: '/home/ubuntu/COMP90024/server/nginx/nginx.conf'
+
+- name: Modify nginx Dockerfile
+  become: yes
+  template:
+    src: Dockerfile.j2
+    dest: '/home/ubuntu/COMP90024/server/nginx/Dockerfile'
+
+
+- name: Start server
+  become: yes
+  shell: docker-compose up -d
+  args:
+    chdir: /home/ubuntu/COMP90024/server
