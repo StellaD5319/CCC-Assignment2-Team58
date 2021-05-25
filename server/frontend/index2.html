@@ -194,8 +194,8 @@
         <div class="c_le">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="index2.html">Chart Data</a></li>
-                <li><a href="index3.html">Map</a></li>
+                <li><a href="index2.html">Statistic</a></li>
+                <li><a href="index3.html">Map Page</a></li>
             </ul>
 
 
@@ -204,9 +204,9 @@
     <div class="bo_ri" style="height: 600px;">
         <div class="title">
             <ul>
-                <li class="act"><a href="#">场景1</a></li>
-                <li><a href="#">场景2</a></li>
-                <li><a href="#">场景3</a></li>
+                <li class="act"><a href="#">Scenario 1</a></li>
+                <li><a href="#">Scenario 2</a></li>
+                <li><a href="#">Scenario 3</a></li>
             </ul>
         </div>
 
@@ -218,13 +218,13 @@
                         <div class="list">
                             <ul>
                                 <li>
-                                    <div id="main" style="height:350px; width: 940px; clear: both; padding: 10px"></div>
+                                    <div id="main" style="height:350px; width: 940px; clear: both; padding: 10px 0"></div>
                                 </li>
                                 <li>
-                                    <div id="main3" style="height:350px; width: 940px; clear: both; padding: 10px"></div>
+                                    <div id="main3" style="height:350px; width: 940px; clear: both; padding: 10px 0"></div>
                                 </li>
                                 <li>
-                                    <div id="main4" style="height:350px; width: 940px; clear: both; padding: 10px"></div>
+                                    <div id="main4" style="height:350px; width: 940px; clear: both; padding: 10px 0"></div>
                                 </li>
                             </ul>
                         </div>
@@ -257,17 +257,19 @@
     $(document).ready(function () {
         $.getJSON("./1.json",function(data){
             const myChart = echarts.init(document.getElementById('main'), 'macarons');
-            const option = {
+            var option = {
                 title: {
                     left: 'center',
                     text: 'Average Income of Each City V.S. COVID-Rate'
                 },
                 tooltip: {
-                    trigger: 'axis'
-                },
-                legend: {
-                    top: 30,
-                    data: ['Median Income', 'Rate of Mentioning COVID']
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross',
+                        crossStyle: {
+                            color: '#999'
+                        }
+                    }
                 },
                 toolbox: {
                     feature: {
@@ -277,37 +279,51 @@
                         saveAsImage: {show: true}
                     }
                 },
-                xAxis: {
-                    type: 'category',
-                    boundaryGap: false,
-                    data: data.map((item) => item.City)
+                legend: {
+                    top: 30,
+                    data: ['Certificate', 'Graduate Degree', 'Bachelor Degree', 'Rate of Mentioning COVID']
                 },
+                xAxis: [
+                    {
+                        type: 'category',
+                        data: data.map((item) => item.City)
+                    }
+                ],
                 yAxis: [
                     {
-                        name: 'Median Income',
-                        type: 'value'
+                        type: 'value',
+                        name: 'Education (%)'
                     },
                     {
-                        name: 'Rate of Mentioning COVID',
-                        type: 'value'
+                        type: 'value',
+                        name: 'Rate of Mentioning COVID (%)'
                     }
                 ],
                 series: [
                     {
-                        name: 'Median Income',
-                        type: 'line',
-                        data: [47943, 46907, 51294.25, 53720.5, 50569.04444]
+                        name: 'Certificate',
+                        type: 'bar',
+                        data: [15, 18.1, 18.1, 18.6, 15.2]
+                    },
+                    {
+                        name: 'Graduate Degree',
+                        type: 'bar',
+                        data: [4.7, 3.9, 3.3, 3.4, 5.6]
+                    },
+                    {
+                        name: 'Bachelor Degree',
+                        type: 'bar',
+                        data: [16.6, 14.5, 13.2, 14.5, 16.9]
                     },
                     {
                         name: 'Rate of Mentioning COVID',
                         type: 'line',
                         yAxisIndex: 1,
-                        data: [0.005736138, 0.005193906, 0.004024685, 0.007736231, 0.007150492]
+                        data: [0.573613767, 0.519390582, 0.402468473, 0.773623135, 0.715049206]
                     }
                 ]
-            }
-
-            myChart.setOption(option)
+            };
+            myChart.setOption(option);
         })
         //场景2
 		$.getJSON("./2.json",function(data){
@@ -338,7 +354,7 @@
             console.log(ranking)
             let series = [
                 {
-                    name: '语言1',
+                    name: 'English',
                     type: 'bar',
                     data: []
                 },
@@ -402,7 +418,7 @@
 				},
 				legend: {
 				    top: 30,
-					data: ['语言1']
+					data: ['English']
 				},
 				xAxis: [
 					{
@@ -416,11 +432,11 @@
 				yAxis: [
 					{
 						type: 'value',
-						name: '语言'
+						name: 'Percentage of Total Language(%)'
 					},
 					{
 						type: 'value',
-						name: '收入'
+						name: 'Median Income(%)'
 					}
 				],
                 series: series
@@ -428,7 +444,7 @@
 			myChart.setOption(option);
             myChart.on('legendselectchanged', function(obj) {
                 console.log(obj)
-                if (obj.selected['语言1']) {
+                if (obj.selected['English']) {
                     ranking = JSON.parse(JSON.stringify(ranking2))
                 } else {
                     ranking = ranking.map((item) => {
@@ -444,7 +460,7 @@
             var option = {
                 title: {
                     left: 'center',
-                    text: 'Average Sentiment Per Twitt V.S. Number of Migration'
+                    text: 'Average Sentiment Per Tweet V.S. Number of Migration'
                 },
                 tooltip: {
                     trigger: 'axis',
@@ -465,7 +481,7 @@
                 },
                 legend: {
                     top: 30,
-                    data: ['Sentiment', 'Income']
+                    data: ['Average Sentiment', 'Migration']
                 },
                 xAxis: [
                     {
@@ -476,21 +492,21 @@
                 yAxis: [
                     {
                         type: 'value',
-                        name: 'Sentiment'
+                        name: 'Average Sentiment Per Tweet'
                     },
                     {
                         type: 'value',
-                        name: 'Income'
+                        name: 'Migration (person)'
                     }
                 ],
                 series: [
                     {
-                        name: '降水量',
+                        name: 'Average Sentiment',
                         type: 'bar',
                         data: [13714, 4060, 4728, 12736, 3021]
                     },
                     {
-                        name: '平均温度',
+                        name: 'Migration',
                         type: 'line',
                         yAxisIndex: 1,
                         data: [50569.4, 53720.5, 46907, 47943, 51294.25]
