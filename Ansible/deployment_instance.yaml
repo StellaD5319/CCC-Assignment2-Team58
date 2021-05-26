@@ -1,0 +1,16 @@
+---
+# deploy instances on MRC
+- hosts: localhost
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  vars_files:
+    - host_vars/deployment.yaml
+    - host_vars/instances.yaml
+  gather_facts: true
+
+  roles:
+    - role: mrc-common
+    - role: mrc-show-images
+    - role: mrc-create-volumes
+    - role: mrc-create-security-groups
+    - role: mrc-create-instances

@@ -1,34 +1,8 @@
 ---
+
+
  #Security group
- #Create a TCP rule covering all ports
-#security_groups:
-  #- name: instance1-security-group
-  #  description: "security group for instance1 server"
-  #  protocol: tcp
-  #  port_range_min: 1
-  #  port_range_max: 65535
-  #  remote_ip_prefix: 0.0.0.0/0
-  #- name: instance2-security-group
-  #  description: "security group for instance2 server"
-  #  protocol: tcp
-  #  port_range_min: 1
-  #  port_range_max: 65535
-  #  remote_ip_prefix: 0.0.0.0/0
-  #- name: instance3-security-group
-  #  description: "security group for instance3 server"
-  #  protocol: tcp
-  #  port_range_min: 1
-  #  port_range_max: 65535
-  #  remote_ip_prefix: 0.0.0.0/0
-# Security group
 security_groups:
-  #- name: ssh
-  #  description: "Security group for SSH access"
-  #  rules:
-  #    - protocol: tcp
-  #      port_range_min: 22
-  #     port_range_max: 22
-  #      remote_ip_prefix: 0.0.0.0/0
   - name: ssh
     description: "Security group for SSH access"
     protocol: tcp
@@ -70,7 +44,7 @@ volumes:
   - vol_name: instance1-volume
     vol_size: 200
     device: /dev/vdb
-    mountpoint: /var/snap #/home/ubuntu/COMP90024 #/var #/var/snap
+    mountpoint: /var/snap 
   - vol_name: instance2-volume
     vol_size: 60
     device: /dev/vdb
@@ -84,14 +58,11 @@ volumes:
 # Instance
 instances:
   - name: instance1 #database
-   # security_groups: instance1-security-group
     volume_ids: '{ instance1_volumes|default([]) }'
     volumes: ['instance1-volume']
   - name: instance2 #webserver
-   # security_groups: instance2-security-group
     volume_ids: '{ instance2_volumes|default([]) }'
     volumes: ['instance2-volume']
-  - name: instance3
-   # security_groups: instance3-security-group
+  - name: instance3 #crawler
     volume_ids: '{ instance3_volumes|default([]) }'
     volumes: [ 'instance3-volume' ]

@@ -4,28 +4,16 @@ ansible_user: ubuntu
 ansible_ssh_private_key_file: ~/cloud.key
 ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
 remote_working_directory: /home/ubuntu/COMP90024
-#remote_working_directory_big_data: /home/ubuntu/COMP90024/COMP90024
-#repository_name: comp90024-project2
-#git_repo: /home/ubuntu/COMP90024/comp90024-project2
+
 
 # CouchDB
-#couchdb_image: ibmcom/couchdb3:latest
 couchdb_user: ccc58
 couchdb_pass: ccc58
 couchdb_VERSION: '3.1.1'
-#couchdb_cookie: 'a192aeb9904e6590849337933b000c99'
-#couchdb_uuid: 'a192aeb9904e6590849337933b001159'
-#cluster_name: '_cluster_setup'
-#couchdb_container_name: 'couchdb_'
 couchdb_port: 5984
-#couchdb_db_name: "live-tweets"
-database_ip: 172.26.131.197
 
 # Docker
 docker_proxy_config_path: /etc/systemd/system/docker.service.d
-
-# Flask
-database_port: 172.26.131.197:5000
 
 
 # Dynamical variables

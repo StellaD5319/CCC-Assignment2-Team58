@@ -1,5 +1,5 @@
-def generate_inventory():
-    with open("inventory/wm_inventory_file.ini") as f:
+def record_ip():
+    with open("inventory/inventory_file.ini") as f:
         hosts_starts = False
         hosts = []
 
@@ -46,6 +46,6 @@ def generate_inventory():
 
 
 if __name__ == "__main__":
-    generate_inventory()
+    record_ip()
 
 

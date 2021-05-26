@@ -1,27 +1,27 @@
 [
   {
     "City": "Sydney",
-    "Average Sentiment": 13714,
+    "Average Sentiment": 0.5096697874592391,
     "Migration": -14177
   },
   {
     "City": "Perth",
-    "Average Sentiment": 4060,
+    "Average Sentiment": 0.5617257298482181,
     "Migration": 2091
   },
   {
     "City": "Brisbane",
-    "Average Sentiment": 4728,
+    "Average Sentiment": 0.534908576215373,
     "Migration": 1911
   },
   {
     "City": "Melbourne",
-    "Average Sentiment": 12736,
+    "Average Sentiment": 0.5410365969883728,
     "Migration": 4143
   },
   {
     "City": "Adelaide",
-    "Average Sentiment": 3021,
+    "Average Sentiment": 0.6357175872428935,
     "Migration": -3520
   }
 ]

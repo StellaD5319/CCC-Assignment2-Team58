@@ -2,9 +2,10 @@
 # Common vars
 availability_zone: melbourne-qh2-uom
 instance_network: qh2-uom-internal
-instance_flavor: uom.mse.1c4g #uom.mse.2c9g
-instance_image: 916cad7a-c545-48b2-b36c-d509ee63b3ce #215f9775-483c-4e0a-b703-d21a5c966f2e # NeCTAR Ubuntu 18.04 LTS (Bionic) amd64 (with Docker)
-instance_key_name: cloud #NectarGroupKey #cloud # ssh private key
-wm_inventory_file: "./inventory/wm_inventory_file.ini"
+instance_flavor: uom.mse.2c9g
+instance_image: 916cad7a-c545-48b2-b36c-d509ee63b3ce 
+instance_key_name: cloud 
+inventory_file: "./inventory/inventory_file.ini"
+
 
 image_facts: []

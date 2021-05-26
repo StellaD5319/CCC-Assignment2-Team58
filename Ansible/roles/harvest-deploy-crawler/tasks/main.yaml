@@ -1,0 +1,98 @@
+---
+
+#- name: Shut down previous container
+#  become: yes
+#  shell: docker stop
+#  args:
+#    chdir: /home/ubuntu/COMP90024/harvest
+
+- name: upload harvest Dockerfile
+  become: yes
+  copy:
+    src: "../CCC-Assignment2-Team58-main/harvest"
+    dest: '{{ remote_working_directory }}'
+
+
+
+- name: Modify Docker configuration -1
+  become: yes
+  template:
+    src: Dockerfile_stream_ml.j2
+    dest: '/home/ubuntu/COMP90024/harvest/Dockerfile_stream_ml'
+
+
+
+- name: Modify Docker configuration -2
+  become: yes
+  template:
+    src: Dockerfile_stream_br.j2
+    dest: '/home/ubuntu/COMP90024/harvest/Dockerfile_stream_br'
+
+
+- name: Modify Docker configuration -3
+  become: yes
+  template:
+    src: Dockerfile_stream_ad.j2
+    dest: '/home/ubuntu/COMP90024/harvest/Dockerfile_stream_ad'
+
+
+
+- name: Modify configuration - python
+  become: yes
+  template:
+    src: stream_tweet_interface.py.j2
+    dest: '/home/ubuntu/COMP90024/harvest/stream_tweet_interface.py'
+
+
+
+
+
+- name: Start server -1
+  become: yes
+  shell: docker build -t stream_ml -f Dockerfile_stream_ml . 
+  args:
+    chdir: /home/ubuntu/COMP90024/harvest
+# sudo docker build -t stream_ml -f Dockerfile_stream_ml .
+
+- name: Start server -2
+  become: yes
+  shell: docker build -t stream_br -f Dockerfile_stream_br . 
+  args:
+    chdir: /home/ubuntu/COMP90024/harvest
+
+# sudo docker build -t stream_br -f Dockerfile_stream_br .
+
+
+
+- name: Start server -3
+  become: yes
+  shell: docker build -t stream_ad -f Dockerfile_stream_ad .
+  args:
+    chdir: /home/ubuntu/COMP90024/harvest
+
+# sudo docker build -t stream_ad -f Dockerfile_stream_ad .
+
+
+- name: Run container -1
+  become: yes
+  shell: docker run stream_ml &
+  args:
+    chdir: /home/ubuntu/COMP90024/harvest
+  ignore_errors: yes
+# sudo docker run stream_ml
+
+- name: Run container -2
+  become: yes
+  shell: docker run stream_br &
+  args:
+    chdir: /home/ubuntu/COMP90024/harvest
+  ignore_errors: yes
+# sudo docker run stream_br
+
+- name: Run container -3
+  become: yes
+  shell: docker run stream_ad &
+  args:
+    chdir: /home/ubuntu/COMP90024/harvest
+  ignore_errors: yes
+# sudo docker run stream_ad

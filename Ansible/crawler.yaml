@@ -1,0 +1,23 @@
+---
+# Deploy 7 crawlers on different instances
+- hosts: webserver
+  vars_files:
+    - host_vars/config.yaml
+    - host_vars/instances.yaml
+  gather_facts: true
+  roles:
+    - role: harvest-deploy-crawler-web
+
+- hosts: database
+  vars_files:
+    - host_vars/config.yaml
+  gather_facts: true
+  roles:
+    - role: harvest-deploy-crawler-db
+
+- hosts: crawler
+  vars_files:
+    - host_vars/config.yaml
+  gather_facts: true
+  roles:
+    - role: harvest-deploy-crawler
