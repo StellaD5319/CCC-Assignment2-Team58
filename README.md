@@ -20,7 +20,7 @@ The project introduces a cloud-based solution to analyze the data that is obtain
 - Full version：https://youtu.be/ylIVDpRaIMA
 - System Architecture：https://youtu.be/LTb3k3yW-po
 - Ansible：https://youtu.be/Yl21i074jVY
-- User Interface Demo：https://youtu.be/rlfvDvE31Vc
+- User Interface Demo：https://youtu.be/5pTLIwlY5I0
 - Data Harvest, CouchDB utilization, Data Analysis: https://youtu.be/C_CjF5lWr3Q
 
 # How to run our system step by step:
