@@ -58,9 +58,9 @@ Users need to install Ansible to run all shell files, and the OpenStack password
 
 ## Resource Access Links
 
-- Website Access:  http://<Instance-2 IP>http://172.26.132.61/:8080/
+- Website Access:  http://<Instance-2 IP>172.26.132.61/:8080/
 
-- CouchDB Access:  http://<Instance-1 IP>:http://172.26.134.22:5984/_utils
+- CouchDB Access:  http://<Instance-1 IP>172.26.134.22:5984/_utils
 
 - We can fill the `<query_data>` part with the keyword we want to gain the specified result, such as sentiment scores for city-level, sentiment scores for suburb-level, or the rate of being mention of COVID, etc.
 
