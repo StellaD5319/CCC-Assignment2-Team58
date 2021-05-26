@@ -17,7 +17,7 @@ The project introduces a cloud-based solution to analyze the data that is obtain
 
 # Project Demonstration Recording:
 
-- Full version：https://youtu.be/ylIVDpRaIMA
+- Full version：https://youtu.be/-ZvovpE9cgY
 - System Architecture：https://youtu.be/LTb3k3yW-po
 - Ansible：https://youtu.be/Yl21i074jVY
 - User Interface Demo：https://youtu.be/5pTLIwlY5I0
@@ -58,9 +58,9 @@ Users need to install Ansible to run all shell files, and the OpenStack password
 
 ## Resource Access Links
 
-- Website Access:  http://<Instance-2 IP>:8080/
+- Website Access:  http://<Instance-2 IP>172.26.132.61/:8080/
 
-- CouchDB Access:  http://<Instance-1 IP>:5984/_utils
+- CouchDB Access:  http://<Instance-1 IP>172.26.134.22:5984/_utils
 
 - We can fill the `<query_data>` part with the keyword we want to gain the specified result, such as sentiment scores for city-level, sentiment scores for suburb-level, or the rate of being mention of COVID, etc.
 
