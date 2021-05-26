@@ -17,7 +17,7 @@ The project introduces a cloud-based solution to analyze the data that is obtain
 
 # Project Demonstration Recording:
 
-- Full version：https://youtu.be/vrN5DmsPToE
+- Full version：https://youtu.be/-ZvovpE9cgY
 - System Architecture：https://youtu.be/LTb3k3yW-po
 - Ansible：https://youtu.be/Yl21i074jVY
 - User Interface Demo：https://youtu.be/rlfvDvE31Vc
